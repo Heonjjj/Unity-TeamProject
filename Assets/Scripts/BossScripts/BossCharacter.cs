@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class BossCharacter : Character
 {
-    [Header("보스 스탯")]
-    [SerializeField] private float bossMaxHP = 100f;
-    [SerializeField] private float bossMoveSpeed = 2f;
+    [Header("보스 데이터 (ScriptableObject")]
+    [SerializeField] private BossStats bossStats;
+
+    public string BossName => bossStats.BossName;
+    public float MaxHP => bossStats.MaxHP;
+    public float MoveSpeed => bossStats.MoveSpeed;
 
     protected override void Start()
     {
         base.Start();
-
-        maxHP = bossMaxHP;
-        moveSpeed = bossMoveSpeed;
+        maxHP = bossStats.MaxHP;
+        moveSpeed = bossStats.MoveSpeed;
     }
 }

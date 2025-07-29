@@ -6,7 +6,7 @@ public class BossController : MonoBehaviour
 {
     [SerializeField] private float patternDelay = 2f; // 패턴 사용 간격
     [SerializeField] private List<MonoBehaviour> patternList; // 패턴 목록
-    
+
     private float patternTimer; // 다음 패턴까지 남은 시간
     private Dictionary<IBossAttackPattern, float> cooldownTracker = new(); // 각 패턴별 남은 쿨타임
     private BossCharacter bossCharacter;
@@ -79,7 +79,7 @@ public class BossController : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");
         if (player == null) return;
-        
+
         Vector3 dir = (player.transform.position - transform.position).normalized; // 보스가 플레이어를 향해 이동
         transform.position += dir * bossCharacter.moveSpeed * Time.deltaTime;
     }

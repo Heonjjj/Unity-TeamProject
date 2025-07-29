@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossInterface : MonoBehaviour
+public interface IBossAttackPattern
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    float Cooldown { get; }
+    float Damage { get; }
+    void Activate();
 }
