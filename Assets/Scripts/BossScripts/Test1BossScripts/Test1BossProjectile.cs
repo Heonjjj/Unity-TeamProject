@@ -5,10 +5,27 @@ using UnityEngine;
 public class Test1BossProjectile : MonoBehaviour
 {
     private float damage;
+    private float maxRange;
+    private Vector3 spawnPosition;
 
     public void SetDamage(float damage)
     {
         this.damage = damage;
+    }
+
+    public void SetRange(float range)
+    {
+        maxRange = range;
+        spawnPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        float distance = Vector3.Distance(transform.position, spawnPosition);
+        if (distance >= maxRange)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +38,11 @@ public class Test1BossProjectile : MonoBehaviour
                 player.TakeDamage(damage);
             }
 
+            Destroy(gameObject);
+        }
+
+        else if (other.CompareTag("Wall") || other.CompareTag("Obstacle")) // 벽, 장애물과 충돌 시 제거
+        {
             Destroy(gameObject);
         }
     }

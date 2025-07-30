@@ -56,6 +56,7 @@ public class Test1BossPattern : MonoBehaviour, IBossAttackPattern
             if (Script != null)
             {
                 Script.SetDamage(Damage);
+                Script.SetRange(15f);
             }
         }
     }
