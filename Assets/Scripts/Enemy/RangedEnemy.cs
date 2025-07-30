@@ -6,7 +6,7 @@ public class RangedEnemy : Enemy
     public Transform firePoint;
     public float attackCooldown = 1.5f;
     private float lastAttackTime = 0f;
-    public int projectileCount = 1; // 적 종류에 따라 달라짐 근접은 기본적으로 0
+    public int projectileCount = 1;
 
     protected override void Update()
     {
@@ -19,9 +19,9 @@ public class RangedEnemy : Enemy
         }
     }
 
-    private void ShootProjectile()
+    protected virtual void ShootProjectile()
     {
-        float angleStep = 30f; // 각도 간격
+        float angleStep = 15f;
         float startAngle = -((projectileCount - 1) / 2f) * angleStep;
 
         for (int i = 0; i < projectileCount; i++)

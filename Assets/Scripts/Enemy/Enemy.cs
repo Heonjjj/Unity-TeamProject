@@ -6,38 +6,41 @@ public class Enemy : MonoBehaviour
     public int health = 5;
     protected Transform player;
     protected Animator animator;
+    protected Rigidbody2D rb;
 
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        animator = GetComponentInChildren<Animator>(); 
+        animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void Update()
     {
         if (player == null) return;
-
         MoveTowardsPlayer();
     }
 
     protected virtual void MoveTowardsPlayer()
     {
         Vector2 direction = (player.position - transform.position).normalized;
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
 
-        // 이동 여부 체크
-        bool isMoving = direction.magnitude > 0.1f;
-        animator.SetBool("isMoving", isMoving);
-
-        if (isMoving)
+        // Animator 파라미터가 존재할 경우만 isMoving 설정
+        if (animator != null && animator.HasParameter("isMoving"))
         {
-            transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
+            bool isMoving = direction.magnitude > 0.1f;
+            animator.SetBool("isMoving", isMoving);
         }
     }
 
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
-        animator.SetTrigger("Hit"); //트리거로 피격 애니메이션 재생 후 Idle 모션으로 돌아감
+        if (animator != null && animator.HasParameter("Hit"))
+        {
+            animator.SetTrigger("Hit");
+        }
 
         if (health <= 0)
         {
