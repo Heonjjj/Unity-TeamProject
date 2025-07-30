@@ -47,7 +47,6 @@ public class PlayerAttack : MonoBehaviour
                 near = enemy;
             }
         }
-
         return near;
     }
 
