@@ -545,8 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1564248265}
-  smoothSpeed: 10
-  offset: {x: 0, y: 0, z: -10}
+  smoothTime: 0
 --- !u!1 &1340097653
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +716,7 @@ GameObject:
   - component: {fileID: 1563477358}
   m_Layer: 0
   m_Name: MainSprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,7 +801,7 @@ GameObject:
   - component: {fileID: 1564248263}
   - component: {fileID: 1564248268}
   - component: {fileID: 1564248267}
-  - component: {fileID: 1564248266}
+  - component: {fileID: 1564248269}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -899,23 +898,6 @@ Transform:
   - {fileID: 1843124266}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1564248266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564248262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a71914a4e61614fa6d5782ed17ebf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 4862901744411346783, guid: 39f05426baf52794592df30a8b4398b0, type: 3}
-  firePoint: {fileID: 1843124266}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1564248267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,11 +922,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdaf08587fa82245a7af94fbe36f01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 5
   currentHP: 0
-  attackPower: 0
-  attackSpeed: 0
-  moveSpeed: 0
+  attackPower: 10
+  attackSpeed: 1
+  moveSpeed: 6
+  attackRange: 10
+--- !u!114 &1564248269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564248262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffc8f6aec1dac549b106ac5211b4e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 4862901744411346783, guid: 39f05426baf52794592df30a8b4398b0, type: 3}
+  firePoint: {fileID: 1843124266}
+  rangeXMultiplier: 1.8
 --- !u!1 &1843124265
 GameObject:
   m_ObjectHideFlags: 0
