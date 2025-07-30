@@ -17,6 +17,7 @@ public class EnemySpawnManager : MonoBehaviour
     public int enemiesPerStage = 20;      // 기본 20마리씩 증가
     public float spawnDelay = 0.2f;       // 스폰 간격
 
+
     public void StartSpawning(int stage)
     {
         StartCoroutine(SpawnEnemies(stage));

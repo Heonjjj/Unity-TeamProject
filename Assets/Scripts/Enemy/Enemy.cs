@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        animator = GetComponent<Animator>(); 
+        animator = GetComponentInChildren<Animator>(); 
     }
 
     protected virtual void Update()
