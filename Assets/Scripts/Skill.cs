@@ -2,59 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Skill
 {
     public string name;
     public string effect;
-    public Skill(string name, string effect)
+    int statType;
+    public float value;
+    public Skill(string name, string effect,int statType, float value)
     {
         this.name = name;
         this.effect = effect;
+        this.statType = statType;
+        this.value = value;
     }//스킬 보여주기
 
     public virtual void SelectSkill(Character chracter)
     {
-        Debug.Log($"{name}스킬 적용됨");
+        
     }//스킬을 선택했을 때
 
 
 
 }
 
-public class MaxHpUp : Skill
-{
-    Character character;
-    public int amount;
-    public MaxHpUp(int amount):base("체력 증가",$"최대 체력이{amount} 증가합니다")
-    {
-        this.amount = amount;
-    }
-    public void IncreaseMaxHP(int amount)
-    {
-        character.maxHP += amount;
-    }
 
-    public override void SelectSkill(Character chracter)
-    {
-        base.SelectSkill(chracter);
-        IncreaseMaxHP(amount);
-    }
-}
-public class CurrentHpUp : Skill
-{
-    Character character;
-    public int amount;
-    public CurrentHpUp(int amount) : base("체력 회복", $"체력을 {amount}만큼 회복합니다")
-    {
-        this.amount = amount;
-    }
-    public override void SelectSkill(Character chracter)
-    {
-        base.SelectSkill(chracter);
-
-    }
-}
 
 //각각의 스킬들의 업글레이드 작업
 
