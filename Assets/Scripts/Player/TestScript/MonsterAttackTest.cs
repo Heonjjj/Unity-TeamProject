@@ -17,7 +17,7 @@ public class MonsterAttackTest : MonoBehaviour
         if (target != null && target is Player)
         {
             target.TakeDamage(selfCharacter.attackPower);
-            Debug.Log("플레이어가 몬스터와 닿아서 데미지 받음");
+            Debug.Log("damage");
         }
     }
 }
