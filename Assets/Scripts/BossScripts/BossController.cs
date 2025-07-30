@@ -6,6 +6,7 @@ public class BossController : MonoBehaviour
 {
     [SerializeField] private float patternDelay = 2f; // 패턴 사용 간격
     [SerializeField] private List<MonoBehaviour> patternList; // 패턴 목록
+    [SerializeField] private Transform bossSprite;
 
     private float patternTimer; // 다음 패턴까지 남은 시간
     private Dictionary<IBossAttackPattern, float> cooldownTracker = new(); // 각 패턴별 남은 쿨타임
@@ -82,5 +83,16 @@ public class BossController : MonoBehaviour
 
         Vector3 dir = (player.transform.position - transform.position).normalized; // 보스가 플레이어를 향해 이동
         transform.position += dir * bossCharacter.moveSpeed * Time.deltaTime;
+
+        if (bossSprite != null) // 스프라이트 방향 전환
+        {
+            Vector3 scale = bossSprite.localScale;
+            if (player.transform.position.x < transform.position.x)
+                scale.x = -Mathf.Abs(scale.x);
+            else
+                scale.x = Mathf.Abs(scale.x);
+
+            bossSprite.localScale = scale;
+        }
     }
 }

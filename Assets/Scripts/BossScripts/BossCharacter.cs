@@ -14,11 +14,21 @@ public class BossCharacter : Character
     public float MaxHP => bossStats.MaxHP;
     public float MoveSpeed => bossStats.MoveSpeed;
 
+    protected void Awake()
+    {
+        if (bossStats == null)
+        {
+            Debug.LogError("BossStats가 할당되지 않았습니다.");
+            return;
+        }
+
+        maxHP = bossStats.MaxHP;
+        moveSpeed = bossStats.MoveSpeed;
+    }
+
     protected override void Start()
     {
         base.Start();
-        maxHP = bossStats.MaxHP;
-        moveSpeed = bossStats.MoveSpeed;
     }
 
     public override void TakeDamage(float damage)
