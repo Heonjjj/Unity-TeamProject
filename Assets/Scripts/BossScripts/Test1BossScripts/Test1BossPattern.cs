@@ -23,7 +23,7 @@ public class Test1BossPattern : MonoBehaviour, IBossAttackPattern
         }
         else
         {
-            ShootProjectiles(5, 8f, 45f);
+            ShootProjectiles(5, 8f, 45f, true);
             Cooldown = 6f;
             Debug.Log("화살 5개 발사");
         }
