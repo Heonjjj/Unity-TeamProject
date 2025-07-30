@@ -9,7 +9,7 @@ public class Arrow : MonoBehaviour
     public void SetOwner(Character attacker)
     {
         owner = attacker;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1.2f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
