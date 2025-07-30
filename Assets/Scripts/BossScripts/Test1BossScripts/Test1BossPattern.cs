@@ -7,13 +7,13 @@ public class Test1BossPattern : MonoBehaviour, IBossAttackPattern
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
-    public float Damage { get; private set; } = 5f;
+    public float Damage { get; private set; } = 1f;
 
     public float Cooldown { get; private set; } = 2f;
     public void Activate()
     {
         int rand = Random.Range(0, 2);
-        Damage = (rand == 0) ? 4f : 6f;
+        Damage = (rand == 0) ? 1f : 2f;
 
         if (rand == 0)
         {
