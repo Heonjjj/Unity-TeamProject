@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     public float attackPower;
     public float attackSpeed;
     public float moveSpeed;
+    public float attackRange;
 
     protected virtual void Start()
     {
