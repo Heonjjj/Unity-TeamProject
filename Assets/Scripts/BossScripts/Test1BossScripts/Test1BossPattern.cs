@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test_1BossPattern : MonoBehaviour, IBossAttackPattern
+public class Test1BossPattern : MonoBehaviour, IBossAttackPattern
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-
-    GameObject proj = Instantiate(projectilePrefab, firePoint.position, rotation);
 
     public float Damage { get; private set; } = 5f;
 
@@ -15,7 +13,6 @@ public class Test_1BossPattern : MonoBehaviour, IBossAttackPattern
     public void Activate()
     {
         int rand = Random.Range(0, 2);
-
         Damage = (rand == 0) ? 4f : 6f;
 
         if (rand == 0)
@@ -55,10 +52,10 @@ public class Test_1BossPattern : MonoBehaviour, IBossAttackPattern
                 rb.velocity = rotation * Vector3.right * speed;
             }
 
-            BossProjectile projScript = proj.GetComponent<BossProjectile>();
-            if (projScript != null)
+            Test1BossProjectile Script = proj.GetComponent<Test1BossProjectile>();
+            if (Script != null)
             {
-                projScript.SetDamage(Damage);
+                Script.SetDamage(Damage);
             }
         }
     }
