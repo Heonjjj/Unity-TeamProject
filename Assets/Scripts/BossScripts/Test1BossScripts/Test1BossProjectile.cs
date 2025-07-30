@@ -18,7 +18,7 @@ public class Test1BossProjectile : MonoBehaviour
             var player = other.GetComponent<Character>(); // <나중에 PlayerCharacter로 변경
             if (player != null) // 플레이어에게 발사체의 damage 수치만큼 데미지
             {
-                player.TakeDamage(damage); // 나중에 TakeDamage가 아니라 플레이어 스크립트의 대미지 입는 코드 실행
+                player.TakeDamage(damage);
             }
 
             Destroy(gameObject);
