@@ -6,6 +6,7 @@ public class BossCharacter : Character
 {
     [Header("보스 데이터 (ScriptableObject")]
     [SerializeField] private BossStats bossStats;
+    [SerializeField] private float contactDamage = 1f;
 
     public event System.Action<float> OnHPChanged;
     public event System.Action OnBossDie;
@@ -41,11 +42,17 @@ public class BossCharacter : Character
         }
     }
 
-    protected override void Die()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        OnBossDie?.Invoke();
-        Destroy(gameObject, 1f);
-        base.Die();
+        if (collision.collider.CompareTag("Player"))
+        {
+            var player = collision.collider.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(contactDamage);
+                Debug.Log($"보스 충돌: 플레이어에게 {contactDamage} 데미지");
+            }
+        }
     }
 
     private IEnumerator PlayHitAnimation()
@@ -53,5 +60,12 @@ public class BossCharacter : Character
         animator.SetBool("IsHit", true);
         yield return new WaitForSeconds(0.4f);
         animator.SetBool("IsHit", false);
+    }
+
+    protected override void Die()
+    {
+        OnBossDie?.Invoke();
+        Destroy(gameObject, 1f);
+        base.Die();
     }
 }

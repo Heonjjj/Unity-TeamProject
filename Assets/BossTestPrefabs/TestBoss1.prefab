@@ -116,11 +116,13 @@ GameObject:
   m_Component:
   - component: {fileID: 243187467751577212}
   - component: {fileID: 7315546635789793381}
+  - component: {fileID: 2648291173528429302}
+  - component: {fileID: 6220517090874084767}
   - component: {fileID: 1793346463894045005}
   - component: {fileID: 3323495908881626781}
   - component: {fileID: 925456249613101055}
-  - component: {fileID: 2648291173528429302}
-  - component: {fileID: 6220517090874084767}
+  - component: {fileID: 6412552312427553044}
+  - component: {fileID: 4005381034877650757}
   m_Layer: 0
   m_Name: TestBoss1
   m_TagString: Enemy
@@ -164,51 +166,7 @@ MonoBehaviour:
   moveSpeed: 0
   attackRange: 0
   bossStats: {fileID: 11400000, guid: 0d12919c514401e4191d8fcb724e3b01, type: 2}
---- !u!114 &1793346463894045005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394539841524122822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e35b7a0549f154ab73a1b70a92a606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patternList:
-  - {fileID: 3323495908881626781}
-  - {fileID: 925456249613101055}
-  bossSprite: {fileID: 9163253960158734242}
-  attackInterval: 1
---- !u!114 &3323495908881626781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394539841524122822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ffc4defcda08a468435e12f99f08b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
-  firePoint: {fileID: 2190352805649430809}
---- !u!114 &925456249613101055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394539841524122822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7251f5722ef86a243bb2475371a99770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
-  firePoint: {fileID: 2190352805649430809}
+  contactDamage: 1
 --- !u!61 &2648291173528429302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,10 +235,90 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1793346463894045005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e35b7a0549f154ab73a1b70a92a606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patternList:
+  - {fileID: 3323495908881626781}
+  - {fileID: 925456249613101055}
+  - {fileID: 6412552312427553044}
+  - {fileID: 4005381034877650757}
+  bossSprite: {fileID: 9163253960158734242}
+  attackInterval: 1
+--- !u!114 &3323495908881626781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ffc4defcda08a468435e12f99f08b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
+  firePoint: {fileID: 2190352805649430809}
+--- !u!114 &925456249613101055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251f5722ef86a243bb2475371a99770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
+  firePoint: {fileID: 2190352805649430809}
+--- !u!114 &6412552312427553044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ea4c6576c710e42825f109098347d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDistance: 3
+  dashDuration: 0.3
+  cooldown: 4
+--- !u!114 &4005381034877650757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7ea35832ed779408e589ac9050f1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
+  firePoint: {fileID: 2190352805649430809}
+  fireRate: 0.1
+  totalDuration: 1
+  projectileSpeed: 8
+  cooldown: 10
 --- !u!1 &3815540139919387201
 GameObject:
   m_ObjectHideFlags: 0

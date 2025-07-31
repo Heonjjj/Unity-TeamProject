@@ -17,9 +17,12 @@ public class BossController : MonoBehaviour
     private Animator anim;
     private Vector3 lastPosition;
 
+    private Rigidbody2D rb;
+
     private void Start()
     {
         bossCharacter = GetComponent<BossCharacter>();
+        rb = GetComponent<Rigidbody2D>();
 
         anim = bossSprite.GetComponent<Animator>();
         lastPosition = transform.position;
@@ -37,7 +40,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         UpdateCooldowns();
         UpdateSpeedAnim();
@@ -88,25 +91,19 @@ public class BossController : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player == null) return;
 
-        Vector3 dir = (player.transform.position - transform.position).normalized; // 보스가 플레이어를 향해 이동
-        float distance = dir.magnitude;
-        Vector3 moveDir = dir.normalized;
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        float distance = Vector3.Distance(player.transform.position, transform.position);
 
-        transform.position += moveDir * bossCharacter.moveSpeed * Time.deltaTime;
+        if (distance > 0.1f)
+        {
+            Vector3 moveDelta = dir * bossCharacter.moveSpeed;
+            rb.MovePosition(transform.position + moveDelta * Time.fixedDeltaTime);
+        }
 
         if (bossSprite != null)
         {
             Vector3 scale = bossSprite.localScale;
-
-            if (player.transform.position.x < transform.position.x)
-            {
-                scale.x = Mathf.Abs(scale.x);
-            }
-            else
-            {
-                scale.x = -Mathf.Abs(scale.x);
-            }
-
+            scale.x = (player.transform.position.x < transform.position.x) ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
             bossSprite.localScale = scale;
         }
     }
