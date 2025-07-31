@@ -8,4 +8,5 @@ public class BossStats : ScriptableObject
     public string BossName;
     public float MaxHP = 100f;
     public float MoveSpeed = 2f;
+    public float AttackRange = 15f;
 }

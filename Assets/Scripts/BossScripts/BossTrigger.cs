@@ -81,4 +81,20 @@ public class BossTrigger : MonoBehaviour
             bossCharacter.OnBossDie -= OnBossDead;
         }
     }
+
+    private void Update()
+    {
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.B) && bossCharacter == null)
+        {
+            Debug.Log("테스트: 강제 보스 소환 시도");
+            BossStageData selectedBoss = bossStages.Find(b => b.stage == GetCurrentStage());
+
+            if (selectedBoss != null && selectedBoss.bossPrefab != null)
+            {
+                SpawnBoss(selectedBoss.bossPrefab);
+            }
+        }
+        #endif
+    }
 }
