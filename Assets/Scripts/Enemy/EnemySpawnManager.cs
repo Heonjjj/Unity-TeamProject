@@ -17,10 +17,11 @@ public class EnemySpawnManager : MonoBehaviour
     public int enemiesPerStage = 20;      // 기본 20마리씩 증가
     public float spawnDelay = 0.2f;       // 스폰 간격
 
-    //public void Start() // 테스트용 몬스터 스폰 사용하실땐 주석만 제거하기
-    //{
-    //    StartSpawning(2);
-    //}
+    // 테스트용 몬스터 스폰 사용하실땐 주석만 제거하기
+    public void Start()
+    {
+        StartSpawning(1);
+    }
 
     public void StartSpawning(int stage)
     {

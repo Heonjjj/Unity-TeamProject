@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         if (player == null) return;
         MoveTowardsPlayer();
+        HandleDirection(); // 자동 방향 전환
     }
 
     protected virtual void MoveTowardsPlayer()
@@ -33,6 +34,22 @@ public class Enemy : MonoBehaviour
             animator.SetBool("isMoving", isMoving);
         }
     }
+
+    private void HandleDirection()
+    {
+        if (player == null) return;
+
+        Vector2 direction = player.position - transform.position;
+
+        // 좌우 반전 처리
+        if (Mathf.Abs(direction.x) > 0.01f) // 거의 0일 때는 무시
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.x = direction.x > 0 ? -Mathf.Abs(localScale.x) : Mathf.Abs(localScale.x);
+            transform.localScale = localScale;
+        }
+    }
+
 
     public virtual void TakeDamage(int damage)
     {
