@@ -20,7 +20,8 @@ public class BossTrigger : MonoBehaviour
     [SerializeField] private Vector2 spawnMax = new Vector2(8f, 4f);
 
     [Header("UI")]
-    [SerializeField] private Slider hpSlider;
+    [SerializeField] private GameObject bossHPBar;
+    private Slider hpSlider;
 
     private BossCharacter bossCharacter;
 
@@ -58,6 +59,15 @@ public class BossTrigger : MonoBehaviour
         bossCharacter.OnHPChanged += UpdateHPBar;
         bossCharacter.OnBossDie += OnBossDead;
 
+        bossHPBar.SetActive(true);
+        hpSlider = bossHPBar.GetComponentInChildren<Slider>();
+
+        StartCoroutine(InitHPBar());
+    }
+
+    private IEnumerator InitHPBar()
+    {
+        yield return null;
         hpSlider.maxValue = bossCharacter.MaxHP;
         hpSlider.value = bossCharacter.currentHP;
     }
@@ -69,7 +79,7 @@ public class BossTrigger : MonoBehaviour
 
     private void OnBossDead()
     {
-        hpSlider.gameObject.SetActive(false);
+        bossHPBar.gameObject.SetActive(false);
         // 씬 전환, 클리어 등 추가
     }
 
@@ -80,5 +90,21 @@ public class BossTrigger : MonoBehaviour
             bossCharacter.OnHPChanged -= UpdateHPBar;
             bossCharacter.OnBossDie -= OnBossDead;
         }
+    }
+
+    private void Update()
+    {
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.B) && bossCharacter == null)
+        {
+            Debug.Log("테스트: 강제 보스 소환 시도");
+            BossStageData selectedBoss = bossStages.Find(b => b.stage == GetCurrentStage());
+
+            if (selectedBoss != null && selectedBoss.bossPrefab != null)
+            {
+                SpawnBoss(selectedBoss.bossPrefab);
+            }
+        }
+        #endif
     }
 }

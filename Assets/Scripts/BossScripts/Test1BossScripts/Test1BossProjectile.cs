@@ -32,7 +32,7 @@ public class Test1BossProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            var player = other.GetComponent<Character>(); // <나중에 PlayerCharacter로 변경
+            var player = other.GetComponent<Player>();
             if (player != null) // 플레이어에게 발사체의 damage 수치만큼 데미지
             {
                 player.TakeDamage(damage);
