@@ -11,19 +11,26 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private LayerMask enemyLayer;
 
-    void Awake()
+    [SerializeField] private float rangeXMultiplier = 1.8f;  //16:9
+
+    private float rangeX;
+    private float rangeY;
+
+    void Start()
     {
         character = GetComponent<Character>();
         move = GetComponent<PlayerMove>();
+
+        rangeY = character.attackRange;
+        rangeX = character.attackRange * rangeXMultiplier;
     }
 
     void Update()
     {
         if (Time.time - lastAttackTime >= character.attackSpeed)
         {
-            GameObject target = FindNearEnemy();
+            GameObject target = FindEnemyInBoxRange();
             if (target != null)
             {
                 ShootArrow(target.transform);
@@ -32,19 +39,24 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    GameObject FindNearEnemy()
+    GameObject FindEnemyInBoxRange()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float minDist = Mathf.Infinity;
         GameObject near = null;
+        float closestDist = Mathf.Infinity;
 
         foreach (GameObject enemy in enemies)
         {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < minDist)
+            Vector2 diff = enemy.transform.position - transform.position;
+
+            if (Mathf.Abs(diff.x) <= rangeX / 2f && Mathf.Abs(diff.y) <= rangeY / 2f)
             {
-                minDist = dist;
-                near = enemy;
+                float dist = diff.sqrMagnitude;
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    near = enemy;
+                }
             }
         }
         return near;
@@ -64,3 +76,4 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 }
+
