@@ -23,6 +23,8 @@ public class PlayerAttack : MonoBehaviour
     private int attackCount = 0;
     private int multiShotTriggerCount = 5;
 
+    [SerializeField] private Transform weaponPivot;
+
     void Start()
     {
         character = GetComponent<Character>();
@@ -34,42 +36,54 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - lastAttackTime >= character.attackSpeed)
+        GameObject target = FindEnemyInBoxRange();
+        if (target != null)
         {
-            GameObject target = FindEnemyInBoxRange();
-            if (target != null)
+            AimWeaponAt(target.transform.position);
+
+            if (Time.time - lastAttackTime >= character.attackSpeed)
             {
-                attackCount++;
+                    attackCount++;
 
-                if (multiShot3)
-                {
-                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
+                    if (multiShot3)
                     {
-                        StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
+                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
+                        {
+                            StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
+                        }
+
+                        else
+                        {
+                            ShootMultiShot3(target.transform);
+                        }
                     }
 
                     else
                     {
-                        ShootMultiShot3(target.transform);
-                    }
-                }
+                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
+                        {
+                            StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
+                        }
 
-                else
-                {
-                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
-                    {
-                        StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
+                        else
+                        {
+                            ShootArrow(target.transform);
+                        }
                     }
 
-                    else
-                    {
-                        ShootArrow(target.transform);
-                    }
-                }
-
-                lastAttackTime = Time.time;
+                    lastAttackTime = Time.time;
             }
         }
+    }
+
+    void AimWeaponAt(Vector3 targetPosition)
+    {
+        if (weaponPivot == null)
+            return;
+
+        Vector2 direction = (targetPosition - weaponPivot.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        weaponPivot.rotation = Quaternion.Euler(0, 0, angle + 225f);
     }
 
     GameObject FindEnemyInBoxRange()
