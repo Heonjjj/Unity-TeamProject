@@ -15,11 +15,6 @@ public class UpgradeBtn : MonoBehaviour
         if (player == null)
         {
             player = FindObjectOfType<Player>();
-
-            if (player == null)
-            {
-                Debug.LogError("Start에서 Player를 찾지 못했습니다!");
-            }
         }
     }
     public void SetText(string title,string effect)
