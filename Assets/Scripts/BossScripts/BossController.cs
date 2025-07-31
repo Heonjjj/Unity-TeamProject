@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] private float patternDelay = 2f; // 패턴 사용 간격
     [SerializeField] private List<MonoBehaviour> patternList; // 패턴 목록
     [SerializeField] private Transform bossSprite;
+    [SerializeField] private float attackInterval = 1f;
 
-    private float patternTimer; // 다음 패턴까지 남은 시간
     private Dictionary<IBossAttackPattern, float> cooldownTracker = new(); // 각 패턴별 남은 쿨타임
     private BossCharacter bossCharacter;
+    private float attackTimer;
+
+    private Animator anim;
+    private Vector3 lastPosition;
 
     private void Start()
     {
         bossCharacter = GetComponent<BossCharacter>();
-        patternTimer = patternDelay;
+
+        anim = bossSprite.GetComponent<Animator>();
+        lastPosition = transform.position;
 
         foreach (var mono in patternList)
         {
@@ -33,17 +40,16 @@ public class BossController : MonoBehaviour
     private void Update()
     {
         UpdateCooldowns();
+        UpdateSpeedAnim();
 
-        patternTimer -= Time.deltaTime; // 매 프레임마다 timer 감소
-        if (patternTimer <= 0f) // 0이되면 랜덤 공격 실행 후 딜레이 초기화
+        attackTimer -= Time.deltaTime;
+        if (attackTimer <= 0f)
         {
-            if (TryActivateAvailablePattern())
-            {
-                patternTimer = patternDelay;
-            }
+            TryActivateAvailablePattern();
+            attackTimer = attackInterval;
         }
 
-        TrackPlayer(); // 보스는 플레이어를 추적함
+        TrackPlayer();
     }
 
     private void UpdateCooldowns() // 모든 패턴의 쿨다운 타이머 감소
@@ -71,6 +77,7 @@ public class BossController : MonoBehaviour
         int index = Random.Range(0, availablePatterns.Count);
         IBossAttackPattern selected = availablePatterns[index];
         selected.Activate();
+
         cooldownTracker[selected] = selected.Cooldown;
 
         return true;
@@ -82,17 +89,35 @@ public class BossController : MonoBehaviour
         if (player == null) return;
 
         Vector3 dir = (player.transform.position - transform.position).normalized; // 보스가 플레이어를 향해 이동
-        transform.position += dir * bossCharacter.moveSpeed * Time.deltaTime;
+        float distance = dir.magnitude;
+        Vector3 moveDir = dir.normalized;
 
-        if (bossSprite != null) // 스프라이트 방향 전환
+        transform.position += moveDir * bossCharacter.moveSpeed * Time.deltaTime;
+
+        if (bossSprite != null)
         {
             Vector3 scale = bossSprite.localScale;
+
             if (player.transform.position.x < transform.position.x)
-                scale.x = -Mathf.Abs(scale.x);
-            else
+            {
                 scale.x = Mathf.Abs(scale.x);
+            }
+            else
+            {
+                scale.x = -Mathf.Abs(scale.x);
+            }
 
             bossSprite.localScale = scale;
         }
+    }
+
+    private void UpdateSpeedAnim()
+    {
+        if (anim == null) return;
+
+        float speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
+        anim.SetFloat("Speed", speed);
+
+        lastPosition = transform.position;
     }
 }

@@ -14,14 +14,11 @@ public class BossCharacter : Character
     public float MaxHP => bossStats.MaxHP;
     public float MoveSpeed => bossStats.MoveSpeed;
 
+    private Animator animator;
+    private Coroutine hitRoutine;
+
     protected void Awake()
     {
-        if (bossStats == null)
-        {
-            Debug.LogError("BossStats가 할당되지 않았습니다.");
-            return;
-        }
-
         maxHP = bossStats.MaxHP;
         moveSpeed = bossStats.MoveSpeed;
     }
@@ -29,20 +26,32 @@ public class BossCharacter : Character
     protected override void Start()
     {
         base.Start();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
         OnHPChanged?.Invoke(currentHP);
+
+        if (animator != null)
+        {
+            if (hitRoutine != null) StopCoroutine(hitRoutine);
+            hitRoutine = StartCoroutine(PlayHitAnimation());
+        }
     }
 
     protected override void Die()
     {
-        Debug.Log("보스 사망!");
-
         OnBossDie?.Invoke();
-
+        Destroy(gameObject, 1f);
         base.Die();
+    }
+
+    private IEnumerator PlayHitAnimation()
+    {
+        animator.SetBool("IsHit", true);
+        yield return new WaitForSeconds(0.4f);
+        animator.SetBool("IsHit", false);
     }
 }

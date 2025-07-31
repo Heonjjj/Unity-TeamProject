@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9163253960158734242}
   - component: {fileID: 7515249108255439201}
-  - component: {fileID: 2414769530925808473}
+  - component: {fileID: 4266757388197756169}
   m_Layer: 0
   m_Name: BossSprite
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2414769530925808473
+--- !u!95 &4266757388197756169
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 7315546635789793381}
   - component: {fileID: 1793346463894045005}
   - component: {fileID: 3323495908881626781}
+  - component: {fileID: 925456249613101055}
   - component: {fileID: 2648291173528429302}
   - component: {fileID: 6220517090874084767}
   m_Layer: 0
@@ -136,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 1394539841524122822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.52, y: 4.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,10 +176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e35b7a0549f154ab73a1b70a92a606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternDelay: 2
   patternList:
   - {fileID: 3323495908881626781}
+  - {fileID: 925456249613101055}
   bossSprite: {fileID: 9163253960158734242}
+  attackInterval: 1
 --- !u!114 &3323495908881626781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +191,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87ffc4defcda08a468435e12f99f08b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
+  firePoint: {fileID: 2190352805649430809}
+--- !u!114 &925456249613101055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394539841524122822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251f5722ef86a243bb2475371a99770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6371216830806592597, guid: c0631afb567622040805f87e2536b112, type: 3}
