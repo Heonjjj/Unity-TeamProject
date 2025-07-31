@@ -1251,7 +1251,7 @@ MonoBehaviour:
   hpText: {fileID: 1227446384}
   damageCooldown: 1
   idleSprite: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 1563477359}
   mainRenderer: {fileID: 1563477358}
 --- !u!114 &1564248269
 MonoBehaviour:
