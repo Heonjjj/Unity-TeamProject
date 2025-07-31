@@ -6,7 +6,7 @@ public class Skill
 {
     public string name;
     public string effect;
-    int statType;
+    public int statType;
     public float value;
     public Skill(string name, string effect,int statType, float value)
     {
@@ -18,7 +18,7 @@ public class Skill
 
     public virtual void SelectSkill(Character chracter)
     {
-        
+
     }//스킬을 선택했을 때
 
 
@@ -33,6 +33,3 @@ public class Skill
 //몬스터를 다 잡고 방을 클리어했을 때
 //3가지의 선택지를 화면에 띄워주고
 //3가지중 하나를 마우스로 클릭하면 체력,체력회복,공격력,공격속도,이동속도가 오르게 하기
-
-//보스 몬스터를 잡았을 때
-//화살 관통,화살 추가,화살 튕기기
