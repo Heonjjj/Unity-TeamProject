@@ -94,7 +94,7 @@ public class BossTrigger : MonoBehaviour
 
     private void Update()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.B) && bossCharacter == null)
         {
             Debug.Log("테스트: 강제 보스 소환 시도");
@@ -105,6 +105,18 @@ public class BossTrigger : MonoBehaviour
                 SpawnBoss(selectedBoss.bossPrefab);
             }
         }
-        #endif
+
+        if (Input.GetKeyDown(KeyCode.N) && bossCharacter != null)
+        {
+            bossCharacter.SetHP(1);
+            Debug.Log("보스 체력 1로 설정됨");
+        }
+
+        if (Input.GetKeyDown(KeyCode.M) && bossCharacter != null)
+        {
+            bossCharacter.TakeDamage(99999); // 강제 즉사
+            Debug.Log("보스 즉사 처리됨");
+        }
+#endif
     }
 }
