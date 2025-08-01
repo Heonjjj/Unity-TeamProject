@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,24 +132,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk (36x30)_0
+      name: Angry_pig_Walk_1
       rect:
         serializedVersion: 2
         x: 4
@@ -157,20 +144,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc45fc4e1b962a64fa9acc5292f22329
-      internalID: -1698599737
+      spriteID: 70d67f094e39fe04ebd0874fef395bbb
+      internalID: -212696105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_1
+      name: Angry_pig_Walk_2
       rect:
         serializedVersion: 2
         x: 40
@@ -178,20 +165,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569e1d0f33b2d154bb102a3670ec58f8
-      internalID: -1217266918
+      spriteID: 3c92320b683a0e34c9843f6a28a920ed
+      internalID: -387184193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_2
+      name: Angry_pig_Walk_3
       rect:
         serializedVersion: 2
         x: 76
@@ -199,20 +186,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b78be8e1bab1394796948c99a48d522
-      internalID: -202488248
+      spriteID: bd4caaa585cd9a643bb4c6dd21d3aa34
+      internalID: -2055730406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_3
+      name: Angry_pig_Walk_4
       rect:
         serializedVersion: 2
         x: 112
@@ -220,20 +207,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1041fd60b690c1448b64910e41e4551
-      internalID: -10525498
+      spriteID: 11169fba7112aae4e955073df2e59483
+      internalID: -1188667005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_4
+      name: Angry_pig_Walk_5
       rect:
         serializedVersion: 2
         x: 148
@@ -241,20 +228,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ea3d44de776e494081a47ff5fab633b
-      internalID: 908138644
+      spriteID: a594bc040ada71c4497e48d67181062b
+      internalID: -24988783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_5
+      name: Angry_pig_Walk_6
       rect:
         serializedVersion: 2
         x: 184
@@ -262,20 +249,20 @@ TextureImporter:
         width: 29
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08ff423d921a0214ebbb13c6d60e5707
-      internalID: 645147202
+      spriteID: 6235999c36f2a0942a09d1df59473e73
+      internalID: 1983739290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_6
+      name: Angry_pig_Walk_7
       rect:
         serializedVersion: 2
         x: 218
@@ -283,20 +270,20 @@ TextureImporter:
         width: 33
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1050eddcbc085b40a1bc743a5ab9fe9
-      internalID: 387152445
+      spriteID: f9aba3d9df10c134f82bf71c7325cc7c
+      internalID: -766550542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_7
+      name: Angry_pig_Walk_8
       rect:
         serializedVersion: 2
         x: 254
@@ -304,20 +291,20 @@ TextureImporter:
         width: 33
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e24e764b2837c740bf42d4585201cea
-      internalID: -1378024008
+      spriteID: dffc0bd45f00bde48899ec04f3925eb1
+      internalID: -454919781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_8
+      name: Angry_pig_Walk_9
       rect:
         serializedVersion: 2
         x: 290
@@ -325,20 +312,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f562adb5304ef2746917034acc9e9edc
-      internalID: -2142592510
+      spriteID: 3f67081cadfa8cc428df6afe213483d6
+      internalID: 951213629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_9
+      name: Angry_pig_Walk_10
       rect:
         serializedVersion: 2
         x: 326
@@ -346,20 +333,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fdb0ef3ac990be4898be31848d815c6
-      internalID: 2054557704
+      spriteID: bab331fecf4b248468709b3d38a136bd
+      internalID: -948024066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_10
+      name: Angry_pig_Walk_11
       rect:
         serializedVersion: 2
         x: 362
@@ -367,20 +354,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1dc9d202c25ada478528a2a0279aac8
-      internalID: -426152713
+      spriteID: ffa43fa35ab2ece4db272d81a1b66cd3
+      internalID: -1520581731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_11
+      name: Angry_pig_Walk_12
       rect:
         serializedVersion: 2
         x: 398
@@ -388,20 +375,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c21097ed17e17c4a886f23eb126000d
-      internalID: -218826941
+      spriteID: 77da51ef09549ae448dfac6a1795199d
+      internalID: 644494446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_12
+      name: Angry_pig_Walk_13
       rect:
         serializedVersion: 2
         x: 434
@@ -409,20 +396,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c68e3178b19a1044aca0dbd7dddaa50
-      internalID: 2023845393
+      spriteID: 167d99c3118f25841a62f60ff6990b2e
+      internalID: -436252698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_13
+      name: Angry_pig_Walk_14
       rect:
         serializedVersion: 2
         x: 470
@@ -430,20 +417,20 @@ TextureImporter:
         width: 33
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 622d862303695104fb8b94e0bc553cfe
-      internalID: -1963720210
+      spriteID: 08405919e8c07e54e9f48d11205d95b8
+      internalID: 648003338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_14
+      name: Angry_pig_Walk_15
       rect:
         serializedVersion: 2
         x: 506
@@ -451,20 +438,20 @@ TextureImporter:
         width: 33
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4e82ab3656bc0343bdd155d547ebe75
-      internalID: 847165503
+      spriteID: cf77650ae5298a340ac1c89d2b797e84
+      internalID: -243900944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk (36x30)_15
+      name: Angry_pig_Walk_16
       rect:
         serializedVersion: 2
         x: 542
@@ -472,14 +459,14 @@ TextureImporter:
         width: 33
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd5b07a969ef5d64c80232efc51e42b5
-      internalID: 124624117
+      spriteID: 16f940ca7a0c5814f89dd187e5633775
+      internalID: -88990025
       vertices: []
       indices: 
       edges: []
@@ -495,22 +482,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk (36x30)_0: -1698599737
-      Walk (36x30)_1: -1217266918
-      Walk (36x30)_10: -426152713
-      Walk (36x30)_11: -218826941
-      Walk (36x30)_12: 2023845393
-      Walk (36x30)_13: -1963720210
-      Walk (36x30)_14: 847165503
-      Walk (36x30)_15: 124624117
-      Walk (36x30)_2: -202488248
-      Walk (36x30)_3: -10525498
-      Walk (36x30)_4: 908138644
-      Walk (36x30)_5: 645147202
-      Walk (36x30)_6: 387152445
-      Walk (36x30)_7: -1378024008
-      Walk (36x30)_8: -2142592510
-      Walk (36x30)_9: 2054557704
+      Angry_pig_Walk_1: -212696105
+      Angry_pig_Walk_10: -948024066
+      Angry_pig_Walk_11: -1520581731
+      Angry_pig_Walk_12: 644494446
+      Angry_pig_Walk_13: -436252698
+      Angry_pig_Walk_14: 648003338
+      Angry_pig_Walk_15: -243900944
+      Angry_pig_Walk_16: -88990025
+      Angry_pig_Walk_2: -387184193
+      Angry_pig_Walk_3: -2055730406
+      Angry_pig_Walk_4: -1188667005
+      Angry_pig_Walk_5: -24988783
+      Angry_pig_Walk_6: 1983739290
+      Angry_pig_Walk_7: -766550542
+      Angry_pig_Walk_8: -454919781
+      Angry_pig_Walk_9: 951213629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

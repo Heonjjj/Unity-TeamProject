@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,24 +132,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run (36x30)_0
+      name: Angry_pig_Run_1
       rect:
         serializedVersion: 2
         x: 4
@@ -163,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ed83e93d281b0045aca11401bc4ea32
-      internalID: 1676132942
+      spriteID: b2de55c1d72d4434f82308846f01b15e
+      internalID: 681050519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_1
+      name: Angry_pig_Run_2
       rect:
         serializedVersion: 2
         x: 40
@@ -184,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14c0673a31f6b54cb76c73c5878e16f
-      internalID: -48608004
+      spriteID: 0c5f111ec4b96f643b62e5d7f48c20d2
+      internalID: 935200556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_2
+      name: Angry_pig_Run_3
       rect:
         serializedVersion: 2
         x: 76
@@ -205,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86740b6ad08ae5b4da0ebee9ea017b9e
-      internalID: -2064261870
+      spriteID: aefb158814d63884cb4dc6a3c3c2111c
+      internalID: 12745347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_3
+      name: Angry_pig_Run_4
       rect:
         serializedVersion: 2
         x: 112
@@ -226,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17507c0c08c29f149af468846856f0e9
-      internalID: -352423050
+      spriteID: 2f01e7212aad2d0448abbb31297bb683
+      internalID: 1778823246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_4
+      name: Angry_pig_Run_5
       rect:
         serializedVersion: 2
         x: 146
@@ -247,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec1710c805cc39a4e9e8a8eca6f3fd78
-      internalID: 299319002
+      spriteID: cd1633713ee33974c96dc036cf72c4fe
+      internalID: 1985065583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_5
+      name: Angry_pig_Run_6
       rect:
         serializedVersion: 2
         x: 182
@@ -268,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce91abc7018011f40bc93dccdf7f45a8
-      internalID: -1983435999
+      spriteID: 5c1534d7457b5a4429c7aa04a046f387
+      internalID: 66863469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_6
+      name: Angry_pig_Run_7
       rect:
         serializedVersion: 2
         x: 218
@@ -289,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b3ed2e9066c47f46adc2fca69f77b50
-      internalID: -591608848
+      spriteID: 3aa8aabfc9bcc1f4e947fe6c991a965f
+      internalID: -1547261036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_7
+      name: Angry_pig_Run_8
       rect:
         serializedVersion: 2
         x: 254
@@ -310,14 +297,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c96f896ab78092040be6f8d45de291a5
-      internalID: -497118838
+      spriteID: 1364c5e188c873448a21e2598f2111af
+      internalID: 856344189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_8
+      name: Angry_pig_Run_9
       rect:
         serializedVersion: 2
         x: 290
@@ -331,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 164d5b0e2ebad0d4e8f3f58437019ba2
-      internalID: -47078
+      spriteID: 22cfee90d7db6e74db88fb0fc92feb83
+      internalID: -679655054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_9
+      name: Angry_pig_Run_10
       rect:
         serializedVersion: 2
         x: 326
@@ -352,14 +339,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef972cea07a6b54459ab33ab7f0b3cba
-      internalID: -1382674440
+      spriteID: 8f156107d28533440971ecbea5633f97
+      internalID: -1916608649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_10
+      name: Angry_pig_Run_11
       rect:
         serializedVersion: 2
         x: 362
@@ -373,14 +360,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4401dfaf867dac94182c3147c6fdb791
-      internalID: -962246171
+      spriteID: 8593503c3fc244a43a1c0f1c5d393b9a
+      internalID: 1455945449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (36x30)_11
+      name: Angry_pig_Run_12
       rect:
         serializedVersion: 2
         x: 398
@@ -394,8 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a1760fb5f888d41948deb5b203b2a9
-      internalID: -1557744143
+      spriteID: 584563a1e5e17fa408086276c8304f63
+      internalID: -1031750533
       vertices: []
       indices: 
       edges: []
@@ -411,18 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run (36x30)_0: 1676132942
-      Run (36x30)_1: -48608004
-      Run (36x30)_10: -962246171
-      Run (36x30)_11: -1557744143
-      Run (36x30)_2: -2064261870
-      Run (36x30)_3: -352423050
-      Run (36x30)_4: 299319002
-      Run (36x30)_5: -1983435999
-      Run (36x30)_6: -591608848
-      Run (36x30)_7: -497118838
-      Run (36x30)_8: -47078
-      Run (36x30)_9: -1382674440
+      Angry_pig_Run_1: 681050519
+      Angry_pig_Run_10: -1916608649
+      Angry_pig_Run_11: 1455945449
+      Angry_pig_Run_12: -1031750533
+      Angry_pig_Run_2: 935200556
+      Angry_pig_Run_3: 12745347
+      Angry_pig_Run_4: 1778823246
+      Angry_pig_Run_5: 1985065583
+      Angry_pig_Run_6: 66863469
+      Angry_pig_Run_7: -1547261036
+      Angry_pig_Run_8: 856344189
+      Angry_pig_Run_9: -679655054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

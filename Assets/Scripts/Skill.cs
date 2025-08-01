@@ -14,21 +14,8 @@ public class Skill
         this.effect = effect;
         this.statType = statType;
         this.value = value;
-    }//스킬 보여주기
-
-    public virtual void SelectSkill(Character chracter)
-    {
-
-    }//스킬을 선택했을 때
-
-
-
+    }
 }
-
-
-
-//각각의 스킬들의 업글레이드 작업
-
 //스킬 UI표시
 //몬스터를 다 잡고 방을 클리어했을 때
 //3가지의 선택지를 화면에 띄워주고

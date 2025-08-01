@@ -27,7 +27,7 @@ public class BossTrigger : MonoBehaviour
 
     private void Start()
     {
-        int currentStage = GetCurrentStage(); // 추후 GameManager 연동
+        int currentStage = GetCurrentStage();
         BossStageData selectedBoss = bossStages.Find(b => b.stage == currentStage);
 
         if (selectedBoss == null || selectedBoss.bossPrefab == null)
@@ -41,8 +41,7 @@ public class BossTrigger : MonoBehaviour
 
     private int GetCurrentStage()
     {
-        // 나중에 GameManager로 대체
-        return 5; // 테스트용
+        return GameManager.Instance.stageLevel;
     }
 
     private void SpawnBoss(GameObject bossPrefab)

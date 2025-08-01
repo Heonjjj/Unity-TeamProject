@@ -3,25 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum Escene
+{
+    NormalStage,
+    BossStage,
+    Menu,
+    GameOver,
+}
+
 public class SceneLoader : MonoBehaviour
 {
-    public static void LoadMainStage()
+    public static void LoadScene(Escene target)
     {
-        SceneManager.LoadScene("MainStage");
+        SceneManager.LoadScene((int)target);
     }
 
-    public static void LoadBossStage()
-    {
-        SceneManager.LoadScene("BossStage");
-    }
-
-    public static void LoadGameOver()
-    {
-        SceneManager.LoadScene("GameOverScene");
-    }
-
-    public static void LoadMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
 }
