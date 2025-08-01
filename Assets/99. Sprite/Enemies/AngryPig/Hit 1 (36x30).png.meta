@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,24 +132,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit 1 (36x30)_0
+      name: Angry_Pig_Hit_1
       rect:
         serializedVersion: 2
         x: 1
@@ -163,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f339f543f57bfa54f8cc384f47de0cce
-      internalID: 1987588899
+      spriteID: 266bc39e52e4f0643980cac68781ffc8
+      internalID: -137606344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit 1 (36x30)_1
+      name: Angry_Pig_Hit_2
       rect:
         serializedVersion: 2
         x: 37
@@ -184,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92986f1e4a820c14faee2f8645093656
-      internalID: 2101646462
+      spriteID: 701da00d428d4334bb7c9575ea1f1780
+      internalID: -294819194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit 1 (36x30)_2
+      name: Angry_Pig_Hit_3
       rect:
         serializedVersion: 2
         x: 74
@@ -205,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f472837d3415591428e0ee865476bfd4
-      internalID: 1524095519
+      spriteID: 7184e20deec653649a11732a58332a23
+      internalID: 72334349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit 1 (36x30)_3
+      name: Angry_Pig_Hit_4
       rect:
         serializedVersion: 2
         x: 111
@@ -226,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c63a9d6493c9c1545a60079598da18fe
-      internalID: 499005661
+      spriteID: b4e216487282dbe44b174aa3b7efc946
+      internalID: 2101941943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit 1 (36x30)_4
+      name: Angry_Pig_Hit_5
       rect:
         serializedVersion: 2
         x: 147
@@ -247,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ce9d2ba43848a84fb41cb2b6ceaddb1
-      internalID: -1192261391
+      spriteID: 1c38e19a10b066b449dc78f8cf4de299
+      internalID: 2132799060
       vertices: []
       indices: 
       edges: []
@@ -264,11 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hit 1 (36x30)_0: 1987588899
-      Hit 1 (36x30)_1: 2101646462
-      Hit 1 (36x30)_2: 1524095519
-      Hit 1 (36x30)_3: 499005661
-      Hit 1 (36x30)_4: -1192261391
+      Angry_Pig_Hit_1: -137606344
+      Angry_Pig_Hit_2: -294819194
+      Angry_Pig_Hit_3: 72334349
+      Angry_Pig_Hit_4: 2101941943
+      Angry_Pig_Hit_5: 2132799060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
