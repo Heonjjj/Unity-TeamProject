@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (36x30)_0
+      name: Angry_Pig_Idle_1
       rect:
         serializedVersion: 2
         x: 2
@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_1
+      name: Angry_Pig_Idle_2
       rect:
         serializedVersion: 2
         x: 38
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_2
+      name: Angry_Pig_Idle_3
       rect:
         serializedVersion: 2
         x: 75
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_3
+      name: Angry_Pig_Idle_4
       rect:
         serializedVersion: 2
         x: 111
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_4
+      name: Angry_Pig_Idle_5
       rect:
         serializedVersion: 2
         x: 147
@@ -254,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_5
+      name: Angry_Pig_Idle_6
       rect:
         serializedVersion: 2
         x: 183
@@ -275,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_6
+      name: Angry_Pig_Idle_7
       rect:
         serializedVersion: 2
         x: 219
@@ -296,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_7
+      name: Angry_Pig_Idle_8
       rect:
         serializedVersion: 2
         x: 255
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_8
+      name: Angry_Pig_Idle_9
       rect:
         serializedVersion: 2
         x: 291
@@ -348,15 +348,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle (36x30)_0: -796107270
-      Idle (36x30)_1: 2130778806
-      Idle (36x30)_2: -45615352
-      Idle (36x30)_3: -557839371
-      Idle (36x30)_4: -1446361249
-      Idle (36x30)_5: 46395383
-      Idle (36x30)_6: -428546388
-      Idle (36x30)_7: -1059223402
-      Idle (36x30)_8: 1545975225
+      Angry_Pig_Idle_1: -796107270
+      Angry_Pig_Idle_2: 2130778806
+      Angry_Pig_Idle_3: -45615352
+      Angry_Pig_Idle_4: -557839371
+      Angry_Pig_Idle_5: -1446361249
+      Angry_Pig_Idle_6: 46395383
+      Angry_Pig_Idle_7: -428546388
+      Angry_Pig_Idle_8: -1059223402
+      Angry_Pig_Idle_9: 1545975225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

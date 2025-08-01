@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit (44x30)_0
+      name: Angry_pig_Idle_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 44
-        height: 30
+        width: 33
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03fa049040f548645ab33bd368e98659
-      internalID: -766710709
+      spriteID: 0b44dce7127090341b965c0454f6897b
+      internalID: -50639879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (44x30)_1
+      name: Angry_pig_Idle_2
       rect:
         serializedVersion: 2
-        x: 44
+        x: 38
         y: 0
-        width: 44
-        height: 30
+        width: 33
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34fe256b42e251d49a5cbe8dded89c7b
-      internalID: -1279371365
+      spriteID: ccf1f1cf49085e642a14f12ac5d102d9
+      internalID: 2009789278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (44x30)_2
+      name: Angry_pig_Idle_3
       rect:
         serializedVersion: 2
-        x: 88
+        x: 75
         y: 0
-        width: 44
-        height: 30
+        width: 31
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a8443d2d407ba45a708d8386c57730
-      internalID: -1192090549
+      spriteID: d0aba4bae89ad564bb2b5914290f6498
+      internalID: 1268432594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (44x30)_3
+      name: Angry_pig_Idle_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 111
         y: 0
-        width: 44
-        height: 30
+        width: 31
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84531afe7f0a2e499e38dbc665bb790
-      internalID: 1593432119
+      spriteID: bb5b6438d86093c46a1a806f606c091b
+      internalID: 385171066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit (44x30)_4
+      name: Angry_pig_Idle_5
       rect:
         serializedVersion: 2
-        x: 176
+        x: 147
         y: 0
-        width: 44
-        height: 30
+        width: 31
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 072a6cff499ed904c8e87fee50dda6b2
-      internalID: 173724285
+      spriteID: c421c7f6a865c90428a67af72e22054c
+      internalID: -1271199794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_pig_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ce377db73cc244eb34dc21a05f33b7
+      internalID: 513630811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_pig_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a908b5c80d0714e9838ce30a77544e
+      internalID: -946859219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_pig_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4b2e3c37b2d07498b0bb841a84563a
+      internalID: -105318645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Angry_pig_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 0
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a475e37b35139c04cbe75e12c0b30660
+      internalID: -1084593311
       vertices: []
       indices: 
       edges: []
@@ -264,11 +348,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hit (44x30)_0: -766710709
-      Hit (44x30)_1: -1279371365
-      Hit (44x30)_2: -1192090549
-      Hit (44x30)_3: 1593432119
-      Hit (44x30)_4: 173724285
+      Angry_pig_Idle_1: -50639879
+      Angry_pig_Idle_2: 2009789278
+      Angry_pig_Idle_3: 1268432594
+      Angry_pig_Idle_4: 385171066
+      Angry_pig_Idle_5: -1271199794
+      Angry_pig_Idle_6: 513630811
+      Angry_pig_Idle_7: -946859219
+      Angry_pig_Idle_8: -105318645
+      Angry_pig_Idle_9: -1084593311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
