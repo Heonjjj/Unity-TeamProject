@@ -83,6 +83,10 @@ public class PlayerAttack : MonoBehaviour
 
         Vector2 direction = (targetPosition - weaponPivot.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        float weaponOffset = 0.1f;
+        weaponPivot.localPosition = direction * weaponOffset;
+
         weaponPivot.rotation = Quaternion.Euler(0, 0, angle + 225f);
     }
 
@@ -150,6 +154,10 @@ public class PlayerAttack : MonoBehaviour
     void ShootArrowInDirection(Vector2 dir)
     {
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+
         arrow.GetComponent<Rigidbody2D>().velocity = dir * 10f;
 
         Arrow arrowScript = arrow.GetComponent<Arrow>();
