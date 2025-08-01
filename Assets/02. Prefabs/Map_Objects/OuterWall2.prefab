@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2460528237865440089}
   - component: {fileID: 6278164802166938682}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: OuterWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
