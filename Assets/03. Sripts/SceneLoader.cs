@@ -7,7 +7,7 @@ public enum Escene
 {
     NormalStage,
     BossStage,
-    Menu,
+    MainMenu,
     GameOver,
 }
 

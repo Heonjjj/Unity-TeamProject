@@ -22,35 +22,38 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
 
     private void Start()
     {
-        //UIManager.Instance.UpdateStage(GameManager.Instance.stageLevel);
-        //UIManager.Instance.ShowClear();
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (SceneManager.GetActiveScene().buildIndex == (int)Escene.NormalStage)
+        if (currentSceneIndex == (int)Escene.NormalStage)
         {
             FindObjectOfType<BoardManager>()?.SetupScene(stageLevel);
         }
+        else if (currentSceneIndex == (int)Escene.BossStage)
+        {
+        }
+
+        UIManager.Instance?.UpdateStage(stageLevel);
     }
 
     public void OnStageCleared()
     {
+        stageLevel++;
         if (stageLevel % 5 == 0) //5스테이지마다 보스 등장
-            SceneManager.LoadScene("02. BossStage");
+            SceneLoader.LoadScene(Escene.BossStage);
         else
         {
-            stageLevel++;
-            SceneManager.LoadScene("01. NormalStage");
+            SceneLoader.LoadScene(Escene.NormalStage);
         }
     }
 
     public void OnBossCleared()
     {
-        stageLevel++;
-        SceneManager.LoadScene("03. MainMenu");
+        SceneLoader.LoadScene(Escene.MainMenu);
     }
 
     public void GameOver()
     {
         // GameOver 처리
-        SceneManager.LoadScene("04. GameOver");
+        SceneLoader.LoadScene(Escene.GameOver);
     }
 }
