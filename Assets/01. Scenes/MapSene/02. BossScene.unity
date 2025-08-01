@@ -5560,7 +5560,7 @@ GameObject:
   - component: {fileID: 1123551158}
   - component: {fileID: 1123551157}
   m_Layer: 0
-  m_Name: BossBoardManager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
