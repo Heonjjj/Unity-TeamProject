@@ -79,6 +79,10 @@ public class BossController : MonoBehaviour
 
         int index = Random.Range(0, availablePatterns.Count);
         IBossAttackPattern selected = availablePatterns[index];
+
+        if (anim != null)
+            anim.SetTrigger("IsAttack");
+
         selected.Activate();
 
         cooldownTracker[selected] = selected.Cooldown;
