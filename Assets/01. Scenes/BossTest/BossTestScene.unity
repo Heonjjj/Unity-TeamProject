@@ -678,6 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204217114}
   - component: {fileID: 1204217113}
+  - component: {fileID: 1204217115}
   m_Layer: 0
   m_Name: BossTrigger
   m_TagString: Untagged
@@ -698,7 +699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossStages:
-  - stage: 5
+  - stage: 1
     bossPrefab: {fileID: 1394539841524122822, guid: ccb349306cafbf64f94e472207f1ca3f, type: 3}
   spawnMin: {x: -8.5, y: -4.5}
   spawnMax: {x: 8.5, y: 4.5}
@@ -718,6 +719,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204217115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204217112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3982648dc95351d48903f80c8c80cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageLevel: 1
 --- !u!1 &1385585225
 GameObject:
   m_ObjectHideFlags: 0
