@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test1BossProjectile : MonoBehaviour
+public class BossProjectile : MonoBehaviour
 {
     private float damage;
     private float maxRange;
@@ -33,16 +33,11 @@ public class Test1BossProjectile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             var player = other.GetComponent<Player>();
-            if (player != null) // 플레이어에게 발사체의 damage 수치만큼 데미지
+            if (player != null)
             {
                 player.TakeDamage(damage);
             }
 
-            Destroy(gameObject);
-        }
-
-        else if (other.CompareTag("Wall") || other.CompareTag("Obstacle")) // 벽, 장애물과 충돌 시 제거
-        {
             Destroy(gameObject);
         }
     }
