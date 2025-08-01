@@ -13,7 +13,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void Awake()
     {
-        Instance = this; 
+        Instance = this;
         if (player == null)
         {
             player = FindObjectOfType<Player>();

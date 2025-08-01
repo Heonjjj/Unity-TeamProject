@@ -12,15 +12,15 @@ public class UpgradeBtn : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI effectText;
 
-    public void SetText(string title, string effect)
-    {
-        titleText.text = title;
-        effectText.text = effect;
-    }
-
     public void SetSkill(Skill skill)
     {
         this.skill = skill;
+        titleText.text = skill.name;
+        effectText.text = skill.effect;
+    }
+    public Skill GetSkill()
+    {
+        return skill;
     }
     public void SetPlayer(Player player)
     {

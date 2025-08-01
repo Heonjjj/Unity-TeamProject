@@ -13,38 +13,48 @@ public class UpgradeUI : MonoBehaviour
         UpgradeImage();
     }
     public void UpgradeImage()
-    {
+    {        
         gameObject.SetActive(true);
+        List<Skill> tempList = new List<Skill>(UpgradeManager.Instance.skillList);
         //와일문 한 번 써보기
         for (int i = 0; i < selectSkill; i++)
         {
-            int index = Random.Range(0, UpgradeManager.Instance.skillList.Count);
-            Skill randomSkill = UpgradeManager.Instance.skillList[index];
-            if (upgradeBtn[0] == null)
-            {
-                upgradeBtn[i].SetText(UpgradeManager.Instance.skillList[index].name, UpgradeManager.Instance.skillList[index].effect);
-                upgradeBtn[i].SetSkill(randomSkill);
-            }
-            else if (upgradeBtn[i] != upgradeBtn[0])
-            {
-                upgradeBtn[i].SetText(UpgradeManager.Instance.skillList[index].name, UpgradeManager.Instance.skillList[index].effect);
-                upgradeBtn[i].SetSkill(randomSkill);
-                //지금 선택된 스킬이 업그레이드 버튼[i-1].skill==randomskill이랑 같다면 다시 랜덤한 값을 넣어줘야 함>>다시 검사
-                //while(업그레이드 버튼[i-1].skill==randomskill)
-                //{
+            Skill randomSkill = tempList[Random.Range(0, tempList.Count)];//랜덤 스킬 함수에 저장된 랜덤번째의 스킬을 randomSkill변수에 저장
+            upgradeBtn[i].SetSkill(randomSkill);
+            tempList.Remove(randomSkill);
 
-                //}
-            }
-            else if (!(upgradeBtn[0] || upgradeBtn[1] || upgradeBtn[2]))
-            {
-                upgradeBtn[i].SetText(UpgradeManager.Instance.skillList[index].name, UpgradeManager.Instance.skillList[index].effect);
-                upgradeBtn[i].SetSkill(randomSkill);
-            }
-            else
-            {
-                i--;
-            }
-        }
+            //Skill randomSkill = RandomSkill();
+            //if (i == 0)
+            //{
+            //    upgradeBtn[0].SetSkill(randomSkill);//i
+            //}
+            //else 
+            //{
+            //    if (upgradeBtn[0] != null)//i==1
+            //    {
+            //        while (randomSkill != upgradeBtn[0].GetSkill())//i-1 랜덤스킬이랑 업그레이드버튼 0번의 스킬이 다를 때 랜덤 스킬을 다시 뽑아야 함
+            //        {
+            //            upgradeBtn[1].SetSkill(randomSkill);//randomSkill=RandomSkill();
+            //        }
+            //    }
+            //    else//i==2일때
+            //    {
+            //        while (randomSkill != upgradeBtn[0].GetSkill() && randomSkill != upgradeBtn[1].GetSkill())//0번이랑 1번이랑 둘다 다를 때
+            //        {
+            //            upgradeBtn[2].SetSkill(randomSkill);//randomSkill=RandomSkill();
+            //        }
+            //    }
+            //    //upgradeBtn[i].SetSkill(randomSkill);
+            //}
+
+            //지금 선택된 스킬이 업그레이드 버튼[i - 1].skill == randomskill이랑 같다면 다시 랜덤한 값을 넣어줘야 함>> 다시 검사
+            //    while (업그레이드 버튼[i - 1].skill == randomskill)                
+        }        
+    }
+    Skill RandomSkill()
+    {
+        Skill r = UpgradeManager.Instance.skillList[Random.Range(0, UpgradeManager.Instance.skillList.Count)];
+        //업그레이드 매니저에 싱글톤화된 스킬리스트의 0번째 부터 스킬리스트의 마지막번째 순서까지의 랜덤번째 순서를 r에 저장
+        return r;//랜덤 저장된 스킬 r을 리턴을 통해 랜덤스킬 함수에 다시 스킬 형태로 줌
     }
 }
-//방 클리어시 시간 멈추고 UI를 화면에 띄워주고 버튼 클릭시 적용 시키게한 후 UI사라지게 하기
