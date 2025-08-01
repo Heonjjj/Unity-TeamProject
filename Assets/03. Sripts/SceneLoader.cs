@@ -7,12 +7,12 @@ public class SceneLoader : MonoBehaviour
 {
     public static void LoadMainStage()
     {
-        SceneManager.LoadScene("01. NormalStage");
+        SceneManager.LoadScene("MainStage");
     }
 
     public static void LoadBossStage()
     {
-        SceneManager.LoadScene("02. BossStage");
+        SceneManager.LoadScene("BossStage");
     }
 
     public static void LoadGameOver()
