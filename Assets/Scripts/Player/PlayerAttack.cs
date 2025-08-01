@@ -43,35 +43,35 @@ public class PlayerAttack : MonoBehaviour
 
             if (Time.time - lastAttackTime >= character.attackSpeed)
             {
-                    attackCount++;
+                attackCount++;
 
-                    if (multiShot3)
+                if (multiShot3)
+                {
+                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
                     {
-                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
-                        {
-                            StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
-                        }
-
-                        else
-                        {
-                            ShootMultiShot3(target.transform);
-                        }
+                        StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
                     }
 
                     else
                     {
-                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
-                        {
-                            StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
-                        }
+                        ShootMultiShot3(target.transform);
+                    }
+                }
 
-                        else
-                        {
-                            ShootArrow(target.transform);
-                        }
+                else
+                {
+                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
+                    {
+                        StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
                     }
 
-                    lastAttackTime = Time.time;
+                    else
+                    {
+                        ShootArrow(target.transform);
+                    }
+                }
+
+                lastAttackTime = Time.time;
             }
         }
     }
