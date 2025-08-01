@@ -29,5 +29,6 @@ public class UpgradeBtn : MonoBehaviour
     public void Click()
     {
         UpgradeManager.Instance.Upgrade(skill);
+        transform.root.gameObject.SetActive(false);
     }//눌렀을 때 캐릭터에 접근 할 수 있도록
 }
