@@ -5579,6 +5579,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorTilemap: {fileID: 1981677138}
+  otherAllowedTilemap: {fileID: 0}
+  backDesignTilemap: {fileID: 777442203}
+  foreDesignTilemap: {fileID: 481943077}
+  collisionTilemap: {fileID: 749667210}
   objectPrefabs:
   - {fileID: 591306211630144253, guid: a51b9b0f388a8b843878af5a7e75f6f0, type: 3}
   - {fileID: 8005573183633356368, guid: 68295a200ee704c479cb8260c9cce4ad, type: 3}
@@ -5591,8 +5595,8 @@ MonoBehaviour:
   - {fileID: 7110787308976526443, guid: a0800ff5c857cce478d4ed32273ef978, type: 3}
   - {fileID: 2882235057908301140, guid: c65749f95b57201428e33d19d9797e4f, type: 3}
   - {fileID: 1544596746600732049, guid: c09b791c5e9594e45ab9a933c04a1f5c, type: 3}
-  minObjects: 10
-  maxObjects: 15
+  minObjects: 15
+  maxObjects: 20
   bossPrefab: {fileID: 0}
 --- !u!4 &1123551158
 Transform:
