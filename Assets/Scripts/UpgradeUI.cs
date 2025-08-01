@@ -7,6 +7,10 @@ public class UpgradeUI : MonoBehaviour
 {
     int selectSkill = 3;
     public List<UpgradeBtn> upgradeBtn;
+    public void Start()
+    {
+        UpgradeImage();
+    }
     public void UpgradeImage()
     {
         for (int i = 0; i < selectSkill; i++)
