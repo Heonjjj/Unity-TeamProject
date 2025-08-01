@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 481943075}
   - component: {fileID: 481943077}
   - component: {fileID: 481943076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ForeDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 749667210}
   - component: {fileID: 749667209}
   - component: {fileID: 749667211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 777442201}
   - component: {fileID: 777442203}
   - component: {fileID: 777442202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5707,7 +5707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957695742}
   - component: {fileID: 1957695741}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5756,7 +5756,7 @@ GameObject:
   - component: {fileID: 1981677136}
   - component: {fileID: 1981677138}
   - component: {fileID: 1981677137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
