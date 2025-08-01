@@ -68,4 +68,15 @@ public class BossCharacter : Character
         Destroy(gameObject, 1f);
         base.Die();
     }
+
+    public void SetHP(float newHP)  //테스트용
+    {
+        currentHP = Mathf.Clamp(newHP, 0, MaxHP);
+        OnHPChanged?.Invoke(currentHP);
+
+        if (currentHP <= 0)
+        {
+            Die(); // 강제로 죽이기
+        }
+    }
 }

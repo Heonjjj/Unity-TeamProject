@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9163253960158734242}
   - component: {fileID: 7515249108255439201}
   - component: {fileID: 4266757388197756169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BossSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 925456249613101055}
   - component: {fileID: 6412552312427553044}
   - component: {fileID: 4005381034877650757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TestBoss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2190352805649430809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -28,7 +28,7 @@ public abstract class BossProjectilePatternBase : MonoBehaviour
             if (rb != null)
                 rb.velocity = rotation * Vector3.right * speed;
 
-            Test1BossProjectile script = proj.GetComponent<Test1BossProjectile>();
+            BossProjectile script = proj.GetComponent<BossProjectile>();
             if (script != null)
             {
                 script.SetDamage(damage);
