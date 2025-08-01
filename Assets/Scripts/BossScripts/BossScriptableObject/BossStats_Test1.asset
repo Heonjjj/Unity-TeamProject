@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BossStats_Test1
   m_EditorClassIdentifier: 
   BossName: Test1
-  MaxHP: 100
+  MaxHP: 1000
   MoveSpeed: 2
+  AttackRange: 15

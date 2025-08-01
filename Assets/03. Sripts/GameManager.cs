@@ -3,40 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour //게임초기화, 레벨관리
 {
-    public static GameManager Instance = null;
-    public BoardManager boardScript;
-    private int level = 3;
-    public float turnDelay = .1f;
+    public static GameManager Instance;
+
+    public int stageLevel = 1;
+
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
-        else if(Instance!=this)
+            DontDestroyOnLoad(gameObject);
+        }
+        else
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
-
-        boardScript = GetComponent<BoardManager>();
     }
 
     private void Start()
     {
-        InitGame();
+        UIManager.Instance.UpdateStage(GameManager.Instance.stageLevel);
+        UIManager.Instance.ShowClear();
+
+        if (SceneManager.GetActiveScene().name == "MainStage")
+        {
+            FindObjectOfType<BoardManager>()?.SetupScene(stageLevel);
+        }
     }
-    void InitGame()
+
+    public void OnStageCleared()
     {
-        boardScript.SetupScene(level);
+        if (stageLevel % 5 == 0) // 예: 3스테이지마다 보스 등장
+            SceneManager.LoadScene("BossStage");
+        else
+        {
+            stageLevel++;
+            SceneManager.LoadScene("MainStage");
+        }
+    }
+
+    public void OnBossCleared()
+    {
+        stageLevel++;
+        SceneManager.LoadScene("MainStage");
     }
 
     public void GameOver()
     {
-        enabled = false;
-    }
-
-
-    public void LoadBossScene()
-    {
-        SceneManager.LoadScene("BossScene");
+        // GameOver 처리
+        SceneManager.LoadScene("GameOverScene");
     }
 }
