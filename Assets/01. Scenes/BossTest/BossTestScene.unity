@@ -700,8 +700,8 @@ MonoBehaviour:
   bossStages:
   - stage: 5
     bossPrefab: {fileID: 1394539841524122822, guid: ccb349306cafbf64f94e472207f1ca3f, type: 3}
-  spawnMin: {x: -8, y: -4}
-  spawnMax: {x: 8, y: 4}
+  spawnMin: {x: -8.5, y: -4.5}
+  spawnMax: {x: 8.5, y: 4.5}
   bossHPBar: {fileID: 827301539}
 --- !u!4 &1204217114
 Transform:
@@ -872,6 +872,9 @@ MonoBehaviour:
   attackRange: 10
   hpText: {fileID: 0}
   damageCooldown: 1
+  idleSprite: {fileID: 0}
+  animator: {fileID: 0}
+  mainRenderer: {fileID: 0}
 --- !u!1 &1672165160
 GameObject:
   m_ObjectHideFlags: 0

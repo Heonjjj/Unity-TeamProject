@@ -47,12 +47,7 @@ public class BossTrigger : MonoBehaviour
 
     private void SpawnBoss(GameObject bossPrefab)
     {
-        Vector3 spawnPos = new Vector3(
-            Random.Range(spawnMin.x, spawnMax.x),
-            Random.Range(spawnMax.y, spawnMin.y),
-            0f
-        );
-
+        Vector3 spawnPos = GetSafeSpawnPosition();
         GameObject boss = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
 
         bossCharacter = boss.GetComponent<BossCharacter>();
@@ -63,6 +58,36 @@ public class BossTrigger : MonoBehaviour
         hpSlider = bossHPBar.GetComponentInChildren<Slider>();
 
         StartCoroutine(InitHPBar());
+    }
+
+    private Vector3 GetSafeSpawnPosition()
+    {
+        const int maxAttempts = 20;
+        float safeRadius = 3f;
+
+        GameObject player = GameObject.FindWithTag("Player");
+        Vector3 playerPos = player != null ? player.transform.position : Vector3.zero;
+
+        for (int i = 0; i < maxAttempts; i++)
+        {
+            Vector3 candidate = new Vector3(
+                Random.Range(spawnMin.x, spawnMax.x),
+                Random.Range(spawnMin.y, spawnMax.y),
+                0f
+            );
+
+            if (Vector3.Distance(candidate, playerPos) > safeRadius)
+            {
+                return candidate;
+            }
+        }
+
+        Debug.LogWarning("안전 거리 내 스폰 위치를 찾지 못해 강제로 마지막 위치 사용");
+        return new Vector3(
+            Random.Range(spawnMin.x, spawnMax.x),
+            Random.Range(spawnMin.y, spawnMax.y),
+            0f
+        );
     }
 
     private IEnumerator InitHPBar()
@@ -90,6 +115,24 @@ public class BossTrigger : MonoBehaviour
             bossCharacter.OnHPChanged -= UpdateHPBar;
             bossCharacter.OnBossDie -= OnBossDead;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 center = new Vector3(
+            (spawnMin.x + spawnMax.x) / 2f,
+            (spawnMin.y + spawnMax.y) / 2f,
+            0f
+        );
+        Vector3 size = new Vector3(
+            Mathf.Abs(spawnMax.x - spawnMin.x),
+            Mathf.Abs(spawnMax.y - spawnMin.y),
+            0f
+        );
+
+        Gizmos.DrawWireCube(center, size);
     }
 
     private void Update()
