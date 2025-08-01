@@ -165,7 +165,7 @@ MonoBehaviour:
   attackSpeed: 0
   moveSpeed: 0
   attackRange: 0
-  bossStats: {fileID: 11400000, guid: 0d12919c514401e4191d8fcb724e3b01, type: 2}
+  bossStats: {fileID: 11400000, guid: c6a986a313011c049bf7c616c768e282, type: 2}
   contactDamage: 1
 --- !u!61 &2648291173528429302
 BoxCollider2D:
