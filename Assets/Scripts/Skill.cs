@@ -15,14 +15,6 @@ public class Skill
         this.statType = statType;
         this.value = value;
     }//스킬 보여주기
-
-    public virtual void SelectSkill(Character chracter)
-    {
-
-    }//스킬을 선택했을 때
-
-
-
 }
 
 
