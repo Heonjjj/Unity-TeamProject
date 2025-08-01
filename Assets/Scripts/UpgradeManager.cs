@@ -32,31 +32,24 @@ public class UpgradeManager : MonoBehaviour
         switch (skill.statType)
         {
             case 0:
-                Debug.Log(player.maxHP);
-                Debug.Log(player.currentHP);
                 player.maxHP += skill.value;
                 player.currentHP += skill.value;
-
                 break;
 
             case 1:
                 player.attackSpeed += skill.value;
-                Debug.Log(player.attackSpeed);
                 break;
 
             case 2:
                 player.attackPower += skill.value;
-                Debug.Log(player.attackPower);
                 break;
 
             case 3:
                 player.attackRange += skill.value;
-                Debug.Log(player.attackRange);
                 break;
 
             case 4:
                 player.moveSpeed += skill.value;
-                Debug.Log(player.moveSpeed);
                 break;
         }
     }
