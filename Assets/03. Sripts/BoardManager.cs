@@ -28,9 +28,8 @@ public class BoardManager : MonoBehaviour
     public GameObject[] objects;
 
 
-
     private Transform boardHolder; //오브젝트들 자식으로 집어넣기
-    private List<Vector3>gridPositions = new List<Vector3>(); //오브젝트 추적
+    private List<Vector2Int>gridPositions = new List<Vector2Int>(); //오브젝트 추적
 
     void InitialiseList() //리스트 초기화
     {
@@ -40,7 +39,7 @@ public class BoardManager : MonoBehaviour
         {
             for(int y = 1; y<rows-1; y++)
             {
-                gridPositions.Add(new Vector3(x, y, 0f)); //좌표저장
+                gridPositions.Add(new Vector2Int(x, y)); //좌표저장
             }
         }
     }
@@ -80,33 +79,71 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    Vector3 RandomPosition() //랜덤오브젝트
+    void LayoutObjectAtPositions(GameObject[] tileArray, int minimum, int maximum, List<Vector2Int> availablePositions)
     {
-        int randomIndex = Random.Range(0, gridPositions.Count);
-        Vector3 randomPosition = gridPositions[randomIndex];
-        gridPositions.RemoveAt(randomIndex);
-        return randomPosition;
-    }
-    void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
-    {
-        int objectCount = Random.Range(minimum, maximum+1);
+        int objectCount = Random.Range(minimum, maximum + 1);
+        List<Vector2Int> usedPositions = new List<Vector2Int>();
 
-        for(int i = 0; i< objectCount; i++)
+        for (int i = 0; i < objectCount; i++)
         {
-            Vector3 randomPosition = RandomPosition();
-            GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-            Instantiate(tileChoice, randomPosition, Quaternion.identity);
+            int attempts = 0;
+            Vector2Int randomPosition = new Vector2Int(-1, -1);
+            bool positionFound = false;
+
+            while (attempts < 100 && !positionFound && availablePositions.Count > 0)
+            {
+                int index = Random.Range(0, availablePositions.Count);
+                randomPosition = availablePositions[index];
+                availablePositions.RemoveAt(index); // 중복 방지
+
+                positionFound = true;
+
+                foreach (Vector2Int pos in usedPositions)
+                {
+                    if (Mathf.Abs(randomPosition.x - pos.x) < 3 && Mathf.Abs(randomPosition.y - pos.y) < 3)
+                    {
+                        positionFound = false;
+                        break;
+                    }
+                }
+
+                attempts++;
+            }
+
+            if (positionFound)
+            {
+                GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
+                Instantiate(tileChoice, new Vector3(randomPosition.x, randomPosition.y, 0f), Quaternion.identity);
+                usedPositions.Add(randomPosition);
+            }
         }
     }
-
     public void SetupScene(int level)
     {
         BoardSetup();
         InitialiseList();
-        //LayoutObjectAtRandom(floorTiles, objectCount.minimum, objectCount.maximum);
-        int enemyCount = (int)Mathf.Log(level, 2f); //레벨증가에 따른 난이도증가
-        //LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount); 몬스터 나중에 추가구현
-        LayoutObjectAtRandom(trees, treeCount.minimum, treeCount.maximum);
-        LayoutObjectAtRandom(objects, objectCount.minimum, objectCount.maximum);
+
+        int enemyCount = (int)Mathf.Log(level, 2f);
+
+        // 좌표 영역 분할
+        List<Vector2Int> treePositions = new List<Vector2Int>();
+        List<Vector2Int> objectPositions = new List<Vector2Int>();
+        List<Vector2Int> remaining = new List<Vector2Int>();
+
+        foreach (Vector2Int pos in gridPositions)
+        {
+            if (pos.x <= 1 || pos.x >= columns-2 || pos.y <= 1 || pos.y >= rows-2)
+                treePositions.Add(pos);
+            else if (pos.x >= 4 && pos.x <= 11 && pos.y >= 4 && pos.y <= 11)
+                objectPositions.Add(pos);
+            else
+                remaining.Add(pos);
+        }
+
+        // 원본 갱신 (필요시)
+        gridPositions = remaining;
+
+        LayoutObjectAtPositions(trees, treeCount.minimum, treeCount.maximum, treePositions);
+        LayoutObjectAtPositions(objects, objectCount.minimum, objectCount.maximum, objectPositions);
     }
 }

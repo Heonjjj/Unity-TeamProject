@@ -12,6 +12,15 @@ public class Player : Character
     [SerializeField] private float damageCooldown = 1f;
     private float lastDamageTime = -Mathf.Infinity;
 
+    [SerializeField] private Sprite idleSprite;                 //정지 상태 이미지
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer mainRenderer;
+
+    private bool isAttacking = false;
+    private float attackAnimTime = 0.2f;
+    private PlayerMove move;
+
     protected override void Start()
     {
         maxHP = 5f;
@@ -20,8 +29,49 @@ public class Player : Character
         moveSpeed = 6f;
         attackRange = 10f;                           //스탯 설정 수정 가능
 
+        move = GetComponent<PlayerMove>();
+
         base.Start();                               //최대 체력으로 맞춰주기         
         UpdateHPText();                             //HP UI Test
+    }
+
+    void Update()
+    {
+        Vector2 movement = move != null ? move.Movement : Vector2.zero;
+
+        //공격 중 애니메이터 끄고 정지 상태 표시
+        if (isAttacking)
+        {
+            animator.SetBool("isWalking", false);
+            return;
+        }
+
+        //이동 방향에 따라 이미지 변경
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            mainRenderer.flipX = movement.x > 0;
+
+        else
+            mainRenderer.flipX = false;
+        
+        animator.SetBool("isWalking", movement != Vector2.zero);
+    }
+
+    //공격 방향으로 정지상태 보여주기
+    public void PlayAttackDirection(Vector2 attackDir)
+    {
+        if (isAttacking) return;
+        isAttacking = true;
+
+        bool isLeft = attackDir.x > 0;
+        animator.SetBool("isWalking", false);
+
+        StartCoroutine(EndAttackAnim());
+    }
+
+    private IEnumerator EndAttackAnim()
+    {
+        yield return new WaitForSeconds(attackAnimTime);
+        isAttacking = false;
     }
 
     //HP UI Test

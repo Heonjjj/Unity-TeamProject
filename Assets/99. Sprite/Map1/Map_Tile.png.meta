@@ -884,15 +884,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map_Tile_35
+      name: 1
       rect:
         serializedVersion: 2
         x: 288
-        y: 288
-        width: 32
-        height: 32
+        y: 256
+        width: 128
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -900,69 +900,6 @@ TextureImporter:
       bones: []
       spriteID: 9420dd160715b394893f8ec619c631d1
       internalID: -556970028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_36
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c871abaa2d7c7a4491bf130033d8fc5
-      internalID: 72209643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_37
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5de91dbe86c0b0499e656f778487393
-      internalID: -1860305290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_38
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53f21cfd88690404abf398d14b6c76be
-      internalID: -937729049
       vertices: []
       indices: 
       edges: []
@@ -1110,90 +1047,6 @@ TextureImporter:
       bones: []
       spriteID: 4d4949837a1f1604ab58a424c833bbce
       internalID: 88807957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_46
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2a19c6ac5ffc86498418f00b169ad1e
-      internalID: -2065400099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_47
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f934ba11e8f4a5488a41e21bb55e279
-      internalID: -1419605234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_48
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c62d0bcddf3693428c1344bdd435c67
-      internalID: 1132659052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_49
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abe21e24daa164a4ba6c4ee9475f0a90
-      internalID: 861783148
       vertices: []
       indices: 
       edges: []
@@ -1577,48 +1430,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map_Tile_68
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3152ac0a99ff3549bbd7621ac6a1073
-      internalID: 1589692667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_69
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47c150c9a8a13524eabb5ec35fe6e817
-      internalID: 2032109613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Map_Tile_70
       rect:
         serializedVersion: 2
@@ -1787,34 +1598,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map_Tile_78
+      name: 2
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f23d2c7d03dbea146b368d4f7ea1921c
-      internalID: 953497834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_79
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2123,27 +1913,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map_Tile_94
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e5d9ffd1e6023548b5aaef7985245f8
-      internalID: -209814127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Map_Tile_95
       rect:
         serializedVersion: 2
@@ -2328,27 +2097,6 @@ TextureImporter:
       bones: []
       spriteID: d2028d858eb28cb4eb871557b362b37e
       internalID: -517658932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map_Tile_104
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f6c7667c56cf4246afdcbc981477726
-      internalID: -1051887017
       vertices: []
       indices: 
       edges: []
@@ -2585,13 +2333,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map_Tile_116
+      name: 3
       rect:
         serializedVersion: 2
         x: 96
         y: 32
         width: 32
-        height: 32
+        height: 95
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3036,6 +2784,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      1: -556970028
+      2: 2096447502
+      3: -1784787331
       Map_Tile_0: 13719274
       Map_Tile_1: 70537958
       Map_Tile_10: -1783499175
@@ -3056,7 +2807,6 @@ TextureImporter:
       Map_Tile_113: -249565247
       Map_Tile_114: -235620430
       Map_Tile_115: -1955788466
-      Map_Tile_116: -1784787331
       Map_Tile_117: -1542325523
       Map_Tile_118: 1699890151
       Map_Tile_119: 214578282
@@ -3102,7 +2852,6 @@ TextureImporter:
       Map_Tile_32: -1892342657
       Map_Tile_33: -72844857
       Map_Tile_34: 1379763052
-      Map_Tile_35: -556970028
       Map_Tile_36: 72209643
       Map_Tile_37: -1860305290
       Map_Tile_38: -937729049
@@ -3150,7 +2899,6 @@ TextureImporter:
       Map_Tile_76: 2098346040
       Map_Tile_77: -1727402722
       Map_Tile_78: 953497834
-      Map_Tile_79: 2096447502
       Map_Tile_8: -1777230326
       Map_Tile_80: 1857435238
       Map_Tile_81: 1831460396
