@@ -2,110 +2,65 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class BossBoardManager : MonoBehaviour
 {
-    [Serializable]
-    public class Count
-    {
-        public int minimum;
-        public int maximum;
-        public Count(int min, int max)
-        {
-            minimum = min;
-            maximum = max;
-        }
-    }
-
-    public int columns = 12;
-    public int rows = 12;
-
-    public Count obstacleCount = new Count(15, 25);
-    public GameObject[] floorTiles;
-    public GameObject[] wallTiles;
-    public GameObject[] obstacleTiles;
-
+    public Tilemap floorTilemap; // floor tilemap만 체크함
+    public GameObject[] objectPrefabs; // 랜덤으로 배치할 오브젝트 프리팹들
+    public int minObjects = 5;
+    public int maxObjects = 10;
     public GameObject bossPrefab;
+    private GameObject bossInstance;
 
-    private Transform boardHolder;
-    private List<Vector3> gridPositions = new List<Vector3>();
-
-    void InitialiseList()
+    void Start()
     {
-        gridPositions.Clear();
+        //SpawnBoss();
+        PlaceRandomObjects();
+    }
 
-        for (int x = 1; x < columns - 1; x++)
+    void PlaceRandomObjects()
+    {
+        BoundsInt bounds = floorTilemap.cellBounds;
+        List<Vector3Int> validPositions = new List<Vector3Int>();
+
+        // 1. floor에만 타일이 있는 위치 수집
+        foreach (Vector3Int pos in bounds.allPositionsWithin)
         {
-            for (int y = 1; y < rows - 1; y++)
+            if (floorTilemap.HasTile(pos))
             {
-                gridPositions.Add(new Vector3(x, y, 0f));
+                validPositions.Add(pos);
             }
         }
-    }
 
-    void BoardSetup()
-    {
-        boardHolder = new GameObject("BossBoard").transform;
+        // 2. 랜덤으로 몇 개 배치할지 결정
+        int objectCount = Random.Range(minObjects, maxObjects + 1);
 
-        for (int x = -1; x < columns + 1; x++)
+        for (int i = 0; i < objectCount && validPositions.Count > 0; i++)
         {
-            for (int y = -1; y < rows + 1; y++)
-            {
-                GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
+            int randIndex = Random.Range(0, validPositions.Count);
+            Vector3Int cellPos = validPositions[randIndex];
+            validPositions.RemoveAt(randIndex); // 중복 방지
 
-                // 벽 배치 (모서리 및 테두리)
-                if ((x == -1 && y == -1))
-                    toInstantiate = wallTiles[4];
-                else if (x == columns && y == -1)
-                    toInstantiate = wallTiles[5];
-                else if (x == columns && y == rows)
-                    toInstantiate = wallTiles[6];
-                else if (x == -1 && y == rows)
-                    toInstantiate = wallTiles[7];
-                else if (y == rows && x >= 0 && x < columns)
-                    toInstantiate = wallTiles[0];
-                else if (x == columns && y >= 0 && y < rows)
-                    toInstantiate = wallTiles[1];
-                else if (y == -1 && x >= 0 && x < columns)
-                    toInstantiate = wallTiles[2];
-                else if (x == -1 && y >= 0 && y < rows)
-                    toInstantiate = wallTiles[3];
+            // 3. 프리팹 선택 + 월드 위치로 변환
+            GameObject prefab = objectPrefabs[Random.Range(0, objectPrefabs.Length)];
+            Vector3 worldPos = floorTilemap.GetCellCenterWorld(cellPos);
 
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity);
-                instance.transform.SetParent(boardHolder);
-            }
+            Instantiate(prefab, worldPos, Quaternion.identity);
         }
     }
 
-    Vector3 RandomPosition()
+    void SpawnBoss()
     {
-        int randomIndex = Random.Range(0, gridPositions.Count);
-        Vector3 randomPosition = gridPositions[randomIndex];
-        gridPositions.RemoveAt(randomIndex);
-        return randomPosition;
+        // 보스 생성 위치는 보스맵에 맞게 수정하세요
+        Vector3 spawnPos = new Vector3(8, 8, 0);
+        bossInstance = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
     }
 
-    void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
+    public void OnBossDefeated()
     {
-        int objectCount = Random.Range(minimum, maximum + 1);
-
-        for (int i = 0; i < objectCount; i++)
-        {
-            Vector3 randomPosition = RandomPosition();
-            GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-            Instantiate(tileChoice, randomPosition, Quaternion.identity);
-        }
-    }
-
-    public void SetupBossScene()
-    {
-        BoardSetup();
-        InitialiseList();
-        LayoutObjectAtRandom(obstacleTiles, obstacleCount.minimum, obstacleCount.maximum);
-
-        // 보스는 중앙 근처에 배치 (예: 맵 중앙)
-        Vector3 bossPosition = new Vector3(columns / 2, rows / 2, 0f);
-        Instantiate(bossPrefab, bossPosition, Quaternion.identity);
+        Debug.Log("Boss Defeated!");
+        GameManager.Instance.OnBossCleared();
     }
 }
