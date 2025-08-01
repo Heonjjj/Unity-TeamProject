@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216795779}
   - component: {fileID: 216795780}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475766346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 1385585232}
   - component: {fileID: 1385585231}
   - component: {fileID: 1385585230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
