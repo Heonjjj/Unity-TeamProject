@@ -103,9 +103,13 @@ public class EnemyDash : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDashing && collision.collider.CompareTag("Wall"))
+        if (collision.collider.CompareTag("Player"))
         {
-            hitWallDuringDash = true; // 돌진 중 벽 충돌 시 즉시 멈춤
+            DealDamageToPlayer();
+        }
+        else if (isDashing && collision.collider.CompareTag("Wall"))
+        {
+            hitWallDuringDash = true;
             StartCoroutine(Stun());
 
             if (animator != null && animator.HasParameter("Hit Wall"))
@@ -114,6 +118,7 @@ public class EnemyDash : Enemy
             }
         }
     }
+
 
     private IEnumerator Stun()
     {
@@ -126,7 +131,7 @@ public class EnemyDash : Enemy
         isStunned = false;
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
 

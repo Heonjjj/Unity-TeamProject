@@ -48,7 +48,7 @@ public class EnemySpawnManager : MonoBehaviour
 
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript.moveSpeed = type.moveSpeed;
-        enemyScript.health = type.health;
+        enemyScript.currentHP = type.health;
 
         if (enemyScript is RangedEnemy ranged)
         {
