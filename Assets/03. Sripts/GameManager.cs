@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         {
         }
 
-        UIManager.Instance?.UpdateStage(stageLevel);
+        //UIManager.Instance?.UpdateStage(stageLevel);
     }
 
     public void OnStageCleared()
