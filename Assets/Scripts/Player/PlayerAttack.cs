@@ -43,35 +43,35 @@ public class PlayerAttack : MonoBehaviour
 
             if (Time.time - lastAttackTime >= character.attackSpeed)
             {
-                    attackCount++;
+                attackCount++;
 
-                    if (multiShot3)
+                if (multiShot3)
+                {
+                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
                     {
-                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
-                        {
-                            StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
-                        }
-
-                        else
-                        {
-                            ShootMultiShot3(target.transform);
-                        }
+                        StartCoroutine(ShootMultiShot3DoubleWithDelay(target.transform));
                     }
 
                     else
                     {
-                        if (multiShot2 && attackCount % multiShotTriggerCount == 0)
-                        {
-                            StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
-                        }
+                        ShootMultiShot3(target.transform);
+                    }
+                }
 
-                        else
-                        {
-                            ShootArrow(target.transform);
-                        }
+                else
+                {
+                    if (multiShot2 && attackCount % multiShotTriggerCount == 0)
+                    {
+                        StartCoroutine(ShootDoubleArrowWithDelay(target.transform));
                     }
 
-                    lastAttackTime = Time.time;
+                    else
+                    {
+                        ShootArrow(target.transform);
+                    }
+                }
+
+                lastAttackTime = Time.time;
             }
         }
     }
@@ -153,6 +153,8 @@ public class PlayerAttack : MonoBehaviour
 
     void ShootArrowInDirection(Vector2 dir)
     {
+        Debug.Log("[Arrow] Instantiate Arrow at " + Time.time);
+
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -166,5 +168,28 @@ public class PlayerAttack : MonoBehaviour
             arrowScript.SetOwner(character);
         }
     }
+
+#if UNITY_EDITOR
+    void OnDrawGizmosSelected()
+    {
+        // 플레이어 오브젝트 기준, 중심에서 사거리 박스 그리기
+        Gizmos.color = Color.green;
+
+        // character 값 null 방지 (에디터에서 바로 그릴 수 있게)
+        float showRangeY = 6f;          // 디폴트값 (Inspector에서 참고)
+        float showRangeX = 6f * 1.8f;   // 디폴트값
+
+        if (character != null)
+        {
+            showRangeY = character.attackRange;
+            showRangeX = character.attackRange * rangeXMultiplier;
+        }
+
+        Vector3 center = transform.position;
+        Vector3 size = new Vector3(showRangeX, showRangeY, 0);
+
+        Gizmos.DrawWireCube(center, size);
+    }
+#endif
 }
 

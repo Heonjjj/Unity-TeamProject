@@ -27,7 +27,7 @@ public class Player : Character
         attackPower = 1f;
         attackSpeed = 1f;
         moveSpeed = 6f;
-        attackRange = 10f;                           //스탯 설정 수정 가능
+        attackRange = 14f;                           //스탯 설정 수정 가능
 
         move = GetComponent<PlayerMove>();
 

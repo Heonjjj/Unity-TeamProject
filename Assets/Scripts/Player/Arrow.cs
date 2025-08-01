@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Arrow : MonoBehaviour
 {
@@ -9,18 +10,39 @@ public class Arrow : MonoBehaviour
     public void SetOwner(Character attacker)
     {
         owner = attacker;
-        Destroy(gameObject, 1.2f);
+        Destroy(gameObject, 0.8f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Character target = other.GetComponent<Character>();
+        Debug.Log($"[Arrow] Trigger: {other.gameObject.name}, parent: {other.transform.parent?.name}");
+        BossCharacter boss = other.GetComponentInParent<BossCharacter>();
+        Debug.Log($"[Arrow] BossCharacter found: {boss}");
 
-        if (target != null && target != owner)
+        if (boss != null && boss != owner)
         {
-            target.TakeDamage(owner.attackPower);
+            Debug.Log($"[Arrow] Hit Boss and will destroy Arrow {gameObject.GetInstanceID()}");
+            boss.TakeDamage(owner.attackPower);
             Destroy(gameObject);
+            return;
+        }
+
+        if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
+        {
+            Debug.Log("[Arrow] Hit Wall/Obstacle and will destroy Arrow");
+            Destroy(gameObject);
+            return;
+        }
+
+        if (other.GetComponent<TilemapCollider2D>() != null)
+        {
+            Debug.Log("[Arrow] Hit TilemapCollider2D and will destroy Arrow");
+            Destroy(gameObject);
+            return;
         }
     }
-
+    void OnDestroy()
+    {
+        Debug.Log($"[Arrow] OnDestroy called for {gameObject.name}, id: {gameObject.GetInstanceID()}");
+    }
 }
