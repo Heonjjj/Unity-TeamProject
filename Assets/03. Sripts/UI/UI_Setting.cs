@@ -84,6 +84,6 @@ public class UI_Setting : MonoBehaviour
     }
     public void PlayClickSound() //클릭사운드
     {
-        AudioManager.Instance.PlayClickSFX();
+        //AudioManager.Instance.PlayClickSFX();
     }
 }
