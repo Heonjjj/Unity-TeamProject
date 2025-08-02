@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Stage: MonoBehaviour
+public class UI_GameHUD: MonoBehaviour
 {
     GameManager gameManager;
     public GameObject[] hearts; // 하트 오브젝트 배열 (Image 말고 GameObject)

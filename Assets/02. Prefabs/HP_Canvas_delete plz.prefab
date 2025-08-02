@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 1580801012895589620}
   - component: {fileID: 3189974483648568054}
   m_Layer: 5
-  m_Name: HP_Canvas
+  m_Name: HP_Canvas_delete plz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

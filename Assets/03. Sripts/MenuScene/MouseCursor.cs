@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Mousecursor : MonoBehaviour
 {
     private RectTransform rectTransform;
+    public Vector2 offset = new Vector2(10f, -10f);  // ÁÂÃø À§·Î »ìÂ¦ ÀÌµ¿
 
     void Start()
     {
@@ -22,6 +23,6 @@ public class Mousecursor : MonoBehaviour
             null,
             out pos
         );
-        rectTransform.localPosition = pos;
+        rectTransform.localPosition = pos+offset;
     }
 }

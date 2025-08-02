@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [Header("BGM Clips")]
     public AudioClip menuBgm;
     public AudioClip gameBgm;
+    public AudioClip bossBgm;
 
     [Header("SFX Clips")]
     public AudioClip clickSfx;
@@ -52,10 +53,15 @@ public class AudioManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MenuScene")
+        if (scene.buildIndex == 0)
             PlayBGM(menuBgm);
-        else if (scene.name == "GameScene")
+        else if (scene.buildIndex == 1)
             PlayBGM(gameBgm);
+        else if (scene.buildIndex == 2)
+            PlayBGM(bossBgm);
+        else if (scene.buildIndex == 3)
+            PlayBGM(bossBgm);
+
     }
 
     public void PlayBGM(AudioClip clip)
@@ -69,7 +75,6 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(clip);
     }
-
     public void PlayClickSFX()
     {
         PlaySFX(clickSfx);

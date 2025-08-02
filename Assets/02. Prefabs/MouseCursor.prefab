@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6690242804648219985}
   - component: {fileID: 7136973578574565268}
   m_Layer: 5
-  m_Name: MouseCursor_Canvas
+  m_Name: MouseCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

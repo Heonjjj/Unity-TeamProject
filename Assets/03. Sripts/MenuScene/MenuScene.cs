@@ -33,12 +33,15 @@ public class MenuScene : MonoBehaviour
         }
     }
 
-    void Update()
+    public void OnClickStart()
     {
-        if (Input.GetMouseButtonDown(0))  // 클릭 시 씬 전환
-        {
-            //SceneLoader.LoadScene(Escene.NormalStage);
-        }
+        SceneLoader.LoadScene(Escene.NormalStage);
+    }
+
+    public void OnClickQuit()
+    {
+        Application.Quit();
+        Debug.Log("게임 종료"); // 에디터에서는 작동 안함, 빌드해야 확인 가능
     }
 }
 public class FallingObjectCleaner : MonoBehaviour

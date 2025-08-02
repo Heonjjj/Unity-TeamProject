@@ -1117,6 +1117,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &726104999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2526819787530545051, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 974.4596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 588.4285
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.7274733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599401322754595153, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61cfa6c82bbbfaa4384d38d72b7d0f80, type: 3}
 --- !u!1 &749667207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,7 +5749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageLevel: 1
---- !u!1001 &1440009007
+--- !u!1001 &1248172021
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5702,7 +5759,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3479436832281710976, guid: 0311c580e7332924b8ea45ecf005d71e, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: HP_Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4048603644232514420, guid: 0311c580e7332924b8ea45ecf005d71e, type: 3}
       propertyPath: m_Pivot.x
@@ -13713,4 +13770,5 @@ SceneRoots:
   - {fileID: 1123551158}
   - {fileID: 1236364901}
   - {fileID: 2123828487}
-  - {fileID: 1440009007}
+  - {fileID: 726104999}
+  - {fileID: 1248172021}

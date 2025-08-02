@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public enum Escene
 {
+    MainMenu,
     NormalStage,
     BossStage,
-    MainMenu,
     GameOver,
 }
 
