@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
+
     [Serializable]  //사용자정의 Attribute
     public class Count
     {
@@ -113,7 +114,13 @@ public class BoardManager : MonoBehaviour
             if (positionFound)
             {
                 GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-                Instantiate(tileChoice, new Vector3(randomPosition.x, randomPosition.y, 0f), Quaternion.identity);
+
+                // 오브젝트 생성
+                GameObject obj = Instantiate(tileChoice, new Vector3(randomPosition.x, randomPosition.y, 0f), Quaternion.identity);
+
+                // 생성 직후 자동으로 RendererManager에 등록
+                RendererManager.Instance?.RegisterObject(obj.transform);
+
                 usedPositions.Add(randomPosition);
             }
         }

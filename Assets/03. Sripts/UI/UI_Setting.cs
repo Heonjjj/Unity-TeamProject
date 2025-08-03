@@ -53,6 +53,14 @@ public class UI_Setting : MonoBehaviour
     {
         SceneLoader.LoadScene(Escene.MainMenu);
     }
+    public void OnClick_StageLevelUp()
+    {
+        GameManager.Instance.IncrementStageLevel();
+    }
+    public void OnClick_DamagePlayer()
+    {
+        GameManager.Instance.TakeDamage(1);
+    }
 
     void OnBgmSliderChanged(float value)
     {

@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class UI_GameHUD: MonoBehaviour
 {
-    GameManager gameManager;
     public GameObject[] hearts; // 하트 오브젝트 배열 (Image 말고 GameObject)
-
-    [Range(0, 5)]
-    public int currentHP = 5;
     private int previousHP = -1;
+
+
+    void Start()
+    {
+        UpdateHearts();
+    }
+
 
     void Update()
     {
+        int currentHP = GameManager.Instance.currentHP;
         if (currentHP != previousHP)
         {
             UpdateHearts();
@@ -21,14 +25,17 @@ public class UI_GameHUD: MonoBehaviour
         }
 
         if (currentHP <= 0)
-            gameManager.GameOver();
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     void UpdateHearts()
     {
+        int currentHP = GameManager.Instance.currentHP;
+
         for (int i = 0; i < hearts.Length; i++)
         {
-            // 왼쪽부터 차례로 비활성화
             hearts[i].SetActive(i < currentHP);
         }
     }

@@ -85,6 +85,5 @@ public class BossBoardManager : MonoBehaviour
     public void OnBossDefeated()
     {
         Debug.Log("Boss Defeated!");
-        GameManager.Instance.OnBossCleared();
     }
 }
