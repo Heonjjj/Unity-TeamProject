@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_Setting : MonoBehaviour
 {
@@ -9,69 +10,49 @@ public class UI_Setting : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
 
-    void OnEnable()
-    {
-        if (bgmSlider != null)
-            bgmSlider.onValueChanged.AddListener(OnBgmSliderChanged);
-        if (sfxSlider != null)
-            sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
-    }
-
     void Start()
     {
         settingsPanel.SetActive(false);
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // 설정창이 열려 있으면 닫기, 닫혀 있으면 열기
-            if (settingsPanel.activeSelf)
-                CloseSettings();
-            else
-                OpenSettings();
+            ToggleSettings();
         }
     }
-    void OnDisable()
-    {
-        bgmSlider.onValueChanged.RemoveListener(OnBgmSliderChanged);
-        sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
-    }
-
 
     public void OpenSettings()
     {
         settingsPanel.SetActive(true);
-        Debug.Log("settingsPanel.activeInHierarchy = " + settingsPanel.activeInHierarchy);
 
-        // 먼저 리스너 제거
-        bgmSlider.onValueChanged.RemoveListener(OnBgmSliderChanged);
-        sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
-
-        // 슬라이더 값 설정 (이때는 이벤트 반응하지 않음)
+        // 슬라이더 값 세팅
         bgmSlider.value = AudioManager.Instance.bgmVolume;
         sfxSlider.value = AudioManager.Instance.sfxVolume;
 
-        // 다시 리스너 추가
-        bgmSlider.onValueChanged.AddListener(OnBgmSliderChanged);
+        // 리스너 등록
+        bgmSlider.onValueChanged.AddListener(OnBgmSliderChanged); //실시간반영용
         sfxSlider.onValueChanged.AddListener(OnSfxSliderChanged);
-
     }
-
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
-    }
 
-    public void ApplySettings()
+        // 리스너 해제 (안 해도 되지만 깔끔하게 하려면 유지)
+        bgmSlider.onValueChanged.RemoveListener(OnBgmSliderChanged);
+        sfxSlider.onValueChanged.RemoveListener(OnSfxSliderChanged);
+    }
+    public void ToggleSettings()
     {
-        AudioManager.Instance.SetBgmVolume(bgmSlider.value);
-        AudioManager.Instance.SetSfxVolume(sfxSlider.value);
-
-        CloseSettings();
+        if (settingsPanel.activeSelf) //true라면
+            CloseSettings();
+        else
+            OpenSettings();
     }
-
+    public void CloseTheScene()
+    {
+        SceneLoader.LoadScene(Escene.MainMenu);
+    }
 
     void OnBgmSliderChanged(float value)
     {
@@ -81,9 +62,5 @@ public class UI_Setting : MonoBehaviour
     void OnSfxSliderChanged(float value)
     {
         AudioManager.Instance.SetSfxVolume(value);
-    }
-    public void PlayClickSound() //클릭사운드
-    {
-        //AudioManager.Instance.PlayClickSFX();
     }
 }
