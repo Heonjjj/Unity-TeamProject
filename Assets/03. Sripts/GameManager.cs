@@ -20,19 +20,32 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
             Destroy(gameObject);
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-        if (currentSceneIndex == (int)Escene.NormalStage)
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == (int)Escene.NormalStage)
         {
             FindObjectOfType<BoardManager>()?.SetupScene(stageLevel);
         }
-        else if (currentSceneIndex == (int)Escene.BossStage)
+        else if (scene.buildIndex == (int)Escene.BossStage)
         {
+            // 보스 씬 초기화도 여기서 가능
         }
 
-        //UIManager.Instance?.UpdateStage(stageLevel);
+        // UI 업데이트 등도 여기서 가능
+    }
+
+    private void Start()
+    {
     }
 
     public void OnStageCleared()

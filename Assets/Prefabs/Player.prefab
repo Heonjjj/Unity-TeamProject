@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2407135437447750438}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Player
+  m_TagString: AutoSort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8284625264142348642}
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.17236853}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.5}
+  m_Size: {x: 0.3, y: 0.84473705}
   m_EdgeRadius: 0
 --- !u!114 &4624151605673606538
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   currentHP: 5
   attackPower: 1
   attackSpeed: 1
-  moveSpeed: 6
+  moveSpeed: 1
   attackRange: 10
   hpText: {fileID: 0}
   damageCooldown: 1
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 5260124758680812267}
   m_Layer: 6
   m_Name: WeaponPivot
-  m_TagString: Untagged
+  m_TagString: AutoSort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,8 +233,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1218997813
+  m_SortingLayer: 2
   m_SortingOrder: 101
   m_Sprite: {fileID: 821890472, guid: 18f65018e3fd1d14db81896673c26192, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1544585528514969332}
   m_Layer: 6
   m_Name: MainSprite
-  m_TagString: Player
+  m_TagString: AutoSort
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,8 +318,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1218997813
+  m_SortingLayer: 2
   m_SortingOrder: 100
   m_Sprite: {fileID: 147038829, guid: c45a04f8631fd644da46680bd79b396e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
