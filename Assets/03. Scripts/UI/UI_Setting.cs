@@ -57,9 +57,9 @@ public class UI_Setting : MonoBehaviour
     {
         GameManager.Instance.IncrementStageLevel();
     }
-    public void OnClick_DamagePlayer()
+    public void OnClick_HealingPlayer()
     {
-        GameManager.Instance.TakeDamage(1);
+        GameManager.Instance.IncreaseHP(1);
     }
 
     void OnBgmSliderChanged(float value)

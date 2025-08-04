@@ -41,7 +41,8 @@ public class PlayerAttack : MonoBehaviour
         {
             AimWeaponAt(target.transform.position);
 
-            if (Time.time - lastAttackTime >= character.attackSpeed)
+            float attackCooldown = 1.0f / character.attackSpeed;
+            if (Time.time - lastAttackTime >= attackCooldown)
             {
                 attackCount++;
 
