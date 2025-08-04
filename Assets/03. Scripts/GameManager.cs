@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
     public static GameManager Instance;
     public UpgradeUI upgradeUI;
     public int stageLevel = 1;
-    public int maxHP = 8;
-    public int currentHP = 5;
 
     private void Awake()
     {
@@ -46,10 +44,6 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         // UI 업데이트 등도 여기서 가능
     }
 
-    private void Start()
-    {
-    }
-
     public void OnStageCleared()
     {
         stageLevel++;
@@ -82,18 +76,24 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         Debug.Log("Stage Level increased to: " + stageLevel);
     }
 
-    public void IncreaseHP(int amount = 1)
-    {
-        currentHP = Mathf.Min(currentHP + amount, maxHP);
-        Debug.Log($"Player healed: +{amount}, currentHP: {currentHP}");
-    }
-
     public void TakeDamage(int amount)
     {
-        currentHP = Mathf.Max(currentHP - amount, 0);
-        Debug.Log($"Player took damage: -{amount}, currentHP: {currentHP}");
-        // 추가로 체력 0 됐을 때 게임오버 처리 등
-        if (currentHP <= 0)
-            GameOver();
+        if (Player.Instance != null)
+        {
+            Player.Instance.TakeDamage(amount);
+            Debug.Log($"Player took damage: -{amount}, currentHP: {Player.Instance.currentHP}");
+            if (Player.Instance.currentHP <= 0)
+                GameOver();
+        }
+    }
+
+    public void IncreaseHP(int amount = 1)
+    {
+        if (Player.Instance != null)
+        {
+            Player.Instance.currentHP = Mathf.Min(Player.Instance.currentHP + amount, Player.Instance.maxHP);
+            Player.Instance.RefreshStatsUI();
+            Debug.Log($"Player healed: + {amount}, currentHP: {Player.Instance.currentHP}");
+        }
     }
 }
