@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1224485670592505756}
   - component: {fileID: 6019657042629971841}
   - component: {fileID: 3334280694570596595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7535417631112595112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 41084228211556014}
   - component: {fileID: 6656591849366442729}
   - component: {fileID: 6561352547142062177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -198,8 +198,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &6656591849366442729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.036323726, y: -0.011176497}
@@ -257,9 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ec3b3af54b4e84995dc2dbf7fc7b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+  attackPower: 0
+  attackSpeed: 0
   moveSpeed: 2
-  health: 5
+  attackRange: 0
+  attackCooldown: 1.5
   projectilePrefab: {fileID: 5870613787180757686, guid: 46c615ece00a0144d9725e4b937b0e90, type: 3}
   firePoint: {fileID: 7535417631112595112}
-  attackCooldown: 1.5
-  projectileCount: 2
+  attackDelay: 0.5

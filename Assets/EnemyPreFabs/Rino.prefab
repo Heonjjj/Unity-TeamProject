@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3378479421169395816}
   - component: {fileID: 2081709926437843128}
   - component: {fileID: 3082832798463776385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -60,8 +60,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &2081709926437843128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.028062463, y: -0.000000029802322}
@@ -119,14 +119,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3625c1aec1a7e3d499efe47dd5a62ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+  attackPower: 0
+  attackSpeed: 0
   moveSpeed: 2
-  health: 5
-  dashSpeed: 8
-  dashCooldown: 2
-  dashDuration: 0.3
-  dashPrepareTime: 0.3
+  attackRange: 0
+  attackCooldown: 1
   dashRange: 9
-  stunDuration: 1
+  dashSpeed: 8
 --- !u!1 &4609693587226976787
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ GameObject:
   - component: {fileID: 2255872844917754448}
   - component: {fileID: 259705776292519069}
   - component: {fileID: 7127395501609797941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

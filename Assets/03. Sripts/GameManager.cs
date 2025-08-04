@@ -27,8 +27,22 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
 
         if (SceneManager.GetActiveScene().name == "MainStage")
         {
-            FindObjectOfType<BoardManager>()?.SetupScene(stageLevel);
+            BoardManager boardManager = FindObjectOfType<BoardManager>();
+            boardManager?.SetupScene(stageLevel);
+
+            EnemySpawnManager spawnManager = FindObjectOfType<EnemySpawnManager>();
+            if (spawnManager != null)
+                spawnManager.StartSpawning(stageLevel);
         }
+<<<<<<< Updated upstream
+=======
+        else if (scene.buildIndex == (int)Escene.BossStage)
+        {
+            // 보스 씬 초기화도 여기서 가능
+        }
+
+        // UI 업데이트 등도 여기서 가능
+>>>>>>> Stashed changes
     }
 
     public void OnStageCleared()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2211905152047170141}
   - component: {fileID: 6988366567841977498}
   - component: {fileID: 1761224628485073678}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,12 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3650f95a712b90442877cd3acaeaf468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+  attackPower: 0
+  attackSpeed: 0
   moveSpeed: 2
-  health: 5
+  attackRange: 0
+  attackCooldown: 1.5
   projectilePrefab: {fileID: 5620449927377685684, guid: 98e33c1eada887148882beacf6ab377e, type: 3}
   firePoint: {fileID: 3069798630426552279}
-  attackCooldown: 1.5
-  projectileCount: 1
 --- !u!50 &6988366567841977498
 Rigidbody2D:
   serializedVersion: 4
@@ -68,7 +71,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -78,8 +81,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &1761224628485073678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +112,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -134,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3069798630426552279}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +170,7 @@ GameObject:
   - component: {fileID: 1752863426888953376}
   - component: {fileID: 151837086417645123}
   - component: {fileID: 876197358929740560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

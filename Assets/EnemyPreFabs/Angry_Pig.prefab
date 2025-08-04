@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2989388906972036087}
   - component: {fileID: 5155100206593331755}
   - component: {fileID: 8770104470711297870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,13 +73,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -50639879, guid: d0ad07c20954e4645a92b35bb51f983d, type: 3}
+  m_SortingOrder: 200
+  m_Sprite: {fileID: -796107270, guid: d0ad07c20954e4645a92b35bb51f983d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.65, y: 1.35}
+  m_Size: {x: 0.33, y: 0.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -118,9 +118,9 @@ GameObject:
   - component: {fileID: 3454171122191645623}
   - component: {fileID: 3008810642219860219}
   - component: {fileID: 2819698761920113349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Angry_Pig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,8 +155,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -166,8 +166,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &3008810642219860219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,10 +197,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0021034032, y: 0.0042068213}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -211,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.33953235, y: 0.31008473}
   m_EdgeRadius: 0
 --- !u!114 &2819698761920113349
 MonoBehaviour:
@@ -225,5 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30eaa3466e8d5d4fb656a858d86cca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+  attackPower: 0
+  attackSpeed: 0
   moveSpeed: 2
-  health: 5
+  attackRange: 0
+  attackCooldown: 1
