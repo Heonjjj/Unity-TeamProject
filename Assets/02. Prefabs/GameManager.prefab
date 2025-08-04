@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 64324249724468330}
   - component: {fileID: 6313933587489990744}
   - component: {fileID: 7720065512803654500}
+  - component: {fileID: 8085635575160057142}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -60,3 +61,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4208b47a15c688741b9a53cc1087b777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8085635575160057142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130390376904732027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8b1cbb1d945704e90f4aeae0c3ca07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossStages:
+  - stage: 5
+    bossPrefab: {fileID: 1394539841524122822, guid: d05b129eb63d4ce418a38fef0b9a4d72, type: 3}
+  - stage: 10
+    bossPrefab: {fileID: 1394539841524122822, guid: aa820645bef813f489db15839b8f0836, type: 3}
+  spawnMin: {x: -16, y: -8}
+  spawnMax: {x: 20, y: 8}
+  bossHPBar: {fileID: 0}
