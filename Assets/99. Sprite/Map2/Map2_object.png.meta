@@ -380,13 +380,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map2_object_11
+      name: 222
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 24
-        height: 24
+        x: 102
+        y: 101
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,13 +485,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Map2_object_16
+      name: 111
       rect:
         serializedVersion: 2
-        x: 96
-        y: 72
-        width: 24
-        height: 24
+        x: 102
+        y: 78
+        width: 12
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -600,15 +600,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      111: 1867235564
+      222: -1234772752
       Map2_object_0: 1773035383
       Map2_object_1: -1765778532
       Map2_object_10: -2140264684
-      Map2_object_11: -1234772752
       Map2_object_12: -359488493
       Map2_object_13: 1649471534
       Map2_object_14: -880354234
       Map2_object_15: -1245936759
-      Map2_object_16: 1867235564
       Map2_object_17: -1496867428
       Map2_object_18: -1560366828
       Map2_object_19: 902946463

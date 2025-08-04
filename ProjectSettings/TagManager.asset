@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Wall
   - Obstacle
+  - AutoSort
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: object
     uniqueID: 3125255813
+    locked: 0
+  - name: Player
+    uniqueID: 1218997813
     locked: 0
