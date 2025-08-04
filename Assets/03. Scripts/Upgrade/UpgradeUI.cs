@@ -24,6 +24,13 @@ public class UpgradeUI : MonoBehaviour
     }
     public void UpgradeImage()
     {
+        if (player == null)
+            player = Player.Instance;
+        if (player == null)
+        {
+            return;
+        }
+
         gameObject.SetActive(true);
         List<Skill> tempList = new List<Skill>(UpgradeManager.Instance.skillList);
         if (player.GetComponent<PlayerAttack>().multiShot2)//시간 관계상 내가 생각한 방법으로 진행

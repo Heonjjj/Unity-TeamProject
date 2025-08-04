@@ -33,7 +33,7 @@ public class UpgradeManager : MonoBehaviour
         {
             player = Player.Instance;
 
-            if (player = null)
+            if (player == null)
             {
                 return;
             }

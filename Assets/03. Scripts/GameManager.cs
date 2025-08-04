@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
 
             //보스씬에서도 위치 지정
             if (Player.Instance != null)
-                Player.Instance.transform.position = new Vector3(7.5f, 7.5f, 0f);
+                Player.Instance.transform.position = new Vector3(3.5f, 2f, 0f);
         }
 
         // UI 업데이트 등도 여기서 가능
