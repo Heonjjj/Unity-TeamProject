@@ -76,6 +76,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    //무기가 공격방향으로 향하도록 함
     void AimWeaponAt(Vector3 targetPosition)
     {
         if (weaponPivot == null)
@@ -90,6 +91,7 @@ public class PlayerAttack : MonoBehaviour
         weaponPivot.rotation = Quaternion.Euler(0, 0, angle + 225f);
     }
 
+    //사거리 내 적 찾기
     GameObject FindEnemyInBoxRange()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -113,12 +115,14 @@ public class PlayerAttack : MonoBehaviour
         return near;
     }
 
+    //기본 공격 
     void ShootArrow(Transform target)
     {
         Vector2 dir = (target.position - firePoint.position).normalized;
         ShootArrowInDirection(dir);
     }
 
+    //멀티샷 공격
     IEnumerator ShootDoubleArrowWithDelay(Transform target)
     {
         Vector2 dir = (target.position - firePoint.position).normalized;
@@ -127,6 +131,7 @@ public class PlayerAttack : MonoBehaviour
         ShootArrowInDirection(dir);
     }
 
+    //갈래화살 공격 
     void ShootMultiShot3(Transform target)
     {
         Vector2 dir = (target.position - firePoint.position).normalized;
@@ -136,6 +141,7 @@ public class PlayerAttack : MonoBehaviour
         ShootArrowInDirection(Quaternion.Euler(0, 0, -angle) * dir);
     }
 
+    //갈래 + 멀티샷, 멀티샷의 딜레이
     IEnumerator ShootMultiShot3DoubleWithDelay(Transform target)
     {
         Vector2 dir = (target.position - firePoint.position).normalized;
@@ -151,6 +157,7 @@ public class PlayerAttack : MonoBehaviour
             ShootArrowInDirection(d);
     }
 
+    //기본 활 공격
     void ShootArrowInDirection(Vector2 dir)
     {
         Debug.Log("[Arrow] Instantiate Arrow at " + Time.time);
