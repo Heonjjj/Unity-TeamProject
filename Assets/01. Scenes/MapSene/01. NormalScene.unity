@@ -873,7 +873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95b67a49b150fa4886a1c9b46bf973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCountText: {fileID: 1194498807}
   meleeEnemy:
     prefab: {fileID: 5556407284273010241, guid: b54a97fdb92bba34b9f57f8b4f0e9be6, type: 3}
     moveSpeed: 1
@@ -969,18 +968,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6313933587489990744, guid: 1e2d78311dae48548b16434ff93549e8, type: 3}
-      propertyPath: maxHP
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313933587489990744, guid: 1e2d78311dae48548b16434ff93549e8, type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 781795490675651309, guid: 6febe481830be4041a8eb9315c9e70ec, type: 3}
-    - target: {fileID: 8085635575160057142, guid: 1e2d78311dae48548b16434ff93549e8, type: 3}
-      propertyPath: bossHPBar
-      value: 
-      objectReference: {fileID: 1476392574}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1149,6 +1136,10 @@ PrefabInstance:
     - target: {fileID: 48329714274629761, guid: 03e5998d864a40e4b9c882351248d08a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497128629305014910, guid: 03e5998d864a40e4b9c882351248d08a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick_HealingPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3117586408841176556, guid: 03e5998d864a40e4b9c882351248d08a, type: 3}
       propertyPath: m_AnchorMax.y

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
     public static GameManager Instance;
     public UpgradeUI upgradeUI;
     public int stageLevel = 1;
-
+    public GameObject gameManagerPrefab;
     public GameObject playerPrefab;
     private bool playerSpawned = false;
 
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            stageLevel = 1;
 
             //플레이어 최초 1회 생성
             if (!playerSpawned)
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         SceneLoader.LoadScene(Escene.GameOver);
         Destroy(gameObject);
         Destroy(Player.Instance.gameObject);
+        Instantiate(gameManagerPrefab);
     }
 
     public void IncrementStageLevel()

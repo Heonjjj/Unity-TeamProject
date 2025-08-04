@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeUI: {fileID: 0}
   stageLevel: 1
-  maxHP: 8
-  currentHP: 5
+  gameManagerPrefab: {fileID: 3130390376904732027}
+  playerPrefab: {fileID: 781795490675651309, guid: 6febe481830be4041a8eb9315c9e70ec, type: 3}
 --- !u!114 &7720065512803654500
 MonoBehaviour:
   m_ObjectHideFlags: 0
