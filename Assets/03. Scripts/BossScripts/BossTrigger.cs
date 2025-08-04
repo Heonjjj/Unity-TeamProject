@@ -47,7 +47,6 @@ public class BossTrigger : MonoBehaviour
 
         if (selectedBoss == null || selectedBoss.bossPrefab == null)
         {
-            gameObject.SetActive(false);
             return;
         }
 
