@@ -9,15 +9,27 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
     public UpgradeUI upgradeUI;
     public int stageLevel = 1;
 
+    public GameObject playerPrefab;
+    private bool playerSpawned = false;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            //플레이어 최초 1회 생성
+            if (!playerSpawned)
+            {
+                Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+                playerSpawned = true;
+            }
         }
         else
+        {
             Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
@@ -35,10 +47,18 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
         if (scene.buildIndex == (int)Escene.NormalStage)
         {
             FindObjectOfType<BoardManager>()?.SetupScene(stageLevel);
+
+            //플레이어 생성 위치 지정
+            if (Player.Instance != null)
+                Player.Instance.transform.position = new Vector3(7.5f, 7.5f, 0f);
         }
         else if (scene.buildIndex == (int)Escene.BossStage)
         {
             // 보스 씬 초기화도 여기서 가능
+
+            //보스씬에서도 위치 지정
+            if (Player.Instance != null)
+                Player.Instance.transform.position = new Vector3(7.5f, 7.5f, 0f);
         }
 
         // UI 업데이트 등도 여기서 가능
