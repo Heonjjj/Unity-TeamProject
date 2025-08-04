@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : Character
 {
+    public static Player Instance;                              //싱글톤
+
     //HP UI Test
     [SerializeField] private TMP_Text hpText;
 
@@ -21,13 +23,27 @@ public class Player : Character
     private float attackAnimTime = 0.2f;
     private PlayerMove move;
 
+    //씬 전환 후 유지
+    void Awake()
+    {
+        //씬 전환 시 중복 생성 방지 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     protected override void Start()
     {
-        maxHP = 5f;
-        attackPower = 1f;
-        attackSpeed = 1f;
-        moveSpeed = 6f;
-        attackRange = 14f;                           //스탯 설정 수정 가능
+        if (maxHP == 0) maxHP = 5f;
+        if (attackPower == 0) attackPower = 1f;
+        if (attackSpeed == 0) attackSpeed = 1f;
+        if (moveSpeed == 0) moveSpeed = 6f;
+        if (attackRange == 0) attackRange = 14f;                           //스탯 설정 수정 가능
 
         move = GetComponent<PlayerMove>();
 
@@ -88,11 +104,14 @@ public class Player : Character
         UpdateHPText();
     }
 
-
     //HP UI Test
     private void UpdateHPText()
     {
         if (hpText != null)
             hpText.text = $":HP: {currentHP} / {maxHP}";
+    }
+    public void RefreshStatsUI()
+    {
+        UpdateHPText();
     }
 }
