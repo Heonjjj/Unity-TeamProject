@@ -26,12 +26,19 @@ public class UpgradeManager : MonoBehaviour
         skillList.Add(new Skill("트리플샷", "화살을 세 발씩 발사합니다", 5, value: 0));
         skillList.Add(new Skill("더블샷", "화살을 두 발씩 발사합니다", 6, value: 0));
     }
-    public void Start()
-    {
-        
-    }
+
     public void Upgrade(Skill skill)
     {
+        if (player == null)
+        {
+            player = Player.Instance;
+
+            if (player = null)
+            {
+                return;
+            }
+        }
+
         switch (skill.statType)
         {
             case 0:
