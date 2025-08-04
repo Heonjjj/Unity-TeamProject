@@ -50,7 +50,6 @@ public class BossCharacter : Character
             if (player != null)
             {
                 player.TakeDamage(contactDamage);
-                Debug.Log($"보스 충돌: 플레이어에게 {contactDamage} 데미지");
             }
         }
     }
