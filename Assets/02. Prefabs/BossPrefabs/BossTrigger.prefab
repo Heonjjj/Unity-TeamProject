@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157577571554036107}
-  - component: {fileID: 4240356850166157802}
+  - component: {fileID: -5246660324579562582}
   m_Layer: 0
   m_Name: BossTrigger
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4240356850166157802
+--- !u!114 &-5246660324579562582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,4 +51,3 @@ MonoBehaviour:
     bossPrefab: {fileID: 1394539841524122822, guid: aa820645bef813f489db15839b8f0836, type: 3}
   spawnMin: {x: -8, y: -4}
   spawnMax: {x: 8, y: 4}
-  bossHPBar: {fileID: 0}

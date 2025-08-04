@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
 public class BossStageData
@@ -19,10 +18,6 @@ public class BossTrigger : MonoBehaviour
     [SerializeField] private Vector2 spawnMin = new Vector2(-8f, -4f);
     [SerializeField] private Vector2 spawnMax = new Vector2(8f, 4f);
 
-    [Header("UI")]
-    [SerializeField] private GameObject bossHPBar;
-    private Slider hpSlider;
-
     private BossCharacter bossCharacter;
 
     private static BossTrigger instance;
@@ -32,7 +27,6 @@ public class BossTrigger : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -43,13 +37,21 @@ public class BossTrigger : MonoBehaviour
     private void Start()
     {
         int currentStage = GetCurrentStage();
+        Debug.Log($"[BossTrigger] 현재 스테이지: {currentStage}");
         BossStageData selectedBoss = bossStages.Find(b => b.stage == currentStage);
+
+        foreach (var data in bossStages)
+        {
+            Debug.Log($"[BossTrigger] 등록된 보스 - Stage: {data.stage}, Prefab: {data.bossPrefab?.name}");
+        }
 
         if (selectedBoss == null || selectedBoss.bossPrefab == null)
         {
+            Debug.LogWarning("[BossTrigger] 해당 스테이지에 보스가 없거나 프리팹이 없습니다.");
             return;
         }
 
+        Debug.Log("[BossTrigger] 보스 소환 시작");
         SpawnBoss(selectedBoss.bossPrefab);
     }
 
@@ -64,13 +66,8 @@ public class BossTrigger : MonoBehaviour
         GameObject boss = Instantiate(bossPrefab, spawnPos, Quaternion.identity);
 
         bossCharacter = boss.GetComponent<BossCharacter>();
-        bossCharacter.OnHPChanged += UpdateHPBar;
+
         bossCharacter.OnBossDie += OnBossDead;
-
-        bossHPBar.SetActive(true);
-        hpSlider = bossHPBar.GetComponentInChildren<Slider>();
-
-        StartCoroutine(InitHPBar());
     }
 
     private Vector3 GetSafeSpawnPosition()
@@ -103,28 +100,15 @@ public class BossTrigger : MonoBehaviour
         );
     }
 
-    private IEnumerator InitHPBar()
-    {
-        yield return null;
-        hpSlider.maxValue = bossCharacter.MaxHP;
-        hpSlider.value = bossCharacter.currentHP;
-    }
-
-    private void UpdateHPBar(float currentHP)
-    {
-        hpSlider.value = currentHP;
-    }
-
     private void OnBossDead()
     {
-        bossHPBar.gameObject.SetActive(false);
+
     }
 
     private void OnDestroy()
     {
         if (bossCharacter != null)
         {
-            bossCharacter.OnHPChanged -= UpdateHPBar;
             bossCharacter.OnBossDie -= OnBossDead;
         }
     }
