@@ -25,6 +25,21 @@ public class BossTrigger : MonoBehaviour
 
     private BossCharacter bossCharacter;
 
+    private static BossTrigger instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         int currentStage = GetCurrentStage();
@@ -32,7 +47,7 @@ public class BossTrigger : MonoBehaviour
 
         if (selectedBoss == null || selectedBoss.bossPrefab == null)
         {
-            gameObject.SetActive(false); // 해당 스테이지에 보스 없음
+            gameObject.SetActive(false);
             return;
         }
 
