@@ -18,10 +18,12 @@ public class UpgradeUI : MonoBehaviour
     }
     public void Start()
     {
-        UpgradeImage();
+        GameManager.Instance.upgradeUI = this;
+        gameObject.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
     public void UpgradeImage()
-    {        
+    {
         gameObject.SetActive(true);
         List<Skill> tempList = new List<Skill>(UpgradeManager.Instance.skillList);
         if (player.GetComponent<PlayerAttack>().multiShot2)//시간 관계상 내가 생각한 방법으로 진행
@@ -69,7 +71,7 @@ public class UpgradeUI : MonoBehaviour
 
             //지금 선택된 스킬이 업그레이드 버튼[i - 1].skill == randomskill이랑 같다면 다시 랜덤한 값을 넣어줘야 함>> 다시 검사
             //    while (업그레이드 버튼[i - 1].skill == randomskill)                
-        }        
+        }
     }
     //Skill RandomSkill()
     //{

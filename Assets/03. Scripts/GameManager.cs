@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour //게임초기화, 레벨관리
 {
     public static GameManager Instance;
-
+    public UpgradeUI upgradeUI;
     public int stageLevel = 1;
     public int maxHP = 8;
-    public int currentHP=5;
+    public int currentHP = 5;
 
     private void Awake()
     {
@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
     public void OnStageCleared()
     {
         stageLevel++;
+        upgradeUI.UpgradeImage();
+    }
+    public void ChangeStage()
+    {
         if (stageLevel >= 11)  // 11 이상일 때 메인 메뉴로 이동
         {
             SceneLoader.LoadScene(Escene.MainMenu);
