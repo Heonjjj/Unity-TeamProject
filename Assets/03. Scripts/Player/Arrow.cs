@@ -15,13 +15,10 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"[Arrow] Trigger: {other.gameObject.name}, parent: {other.transform.parent?.name}");
         BossCharacter boss = other.GetComponentInParent<BossCharacter>();
-        Debug.Log($"[Arrow] BossCharacter found: {boss}");
 
         if (boss != null && boss != owner)
         {
-            Debug.Log($"[Arrow] Hit Boss and will destroy Arrow {gameObject.GetInstanceID()}");
             boss.TakeDamage(owner.attackPower);
             Destroy(gameObject);
             return;
@@ -29,20 +26,14 @@ public class Arrow : MonoBehaviour
 
         if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
         {
-            Debug.Log("[Arrow] Hit Wall/Obstacle and will destroy Arrow");
             Destroy(gameObject);
             return;
         }
 
         if (other.GetComponent<TilemapCollider2D>() != null)
         {
-            Debug.Log("[Arrow] Hit TilemapCollider2D and will destroy Arrow");
             Destroy(gameObject);
             return;
         }
-    }
-    void OnDestroy()
-    {
-        Debug.Log($"[Arrow] OnDestroy called for {gameObject.name}, id: {gameObject.GetInstanceID()}");
     }
 }
