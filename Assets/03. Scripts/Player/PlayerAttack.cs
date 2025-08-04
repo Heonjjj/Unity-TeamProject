@@ -160,8 +160,6 @@ public class PlayerAttack : MonoBehaviour
     //기본 활 공격
     void ShootArrowInDirection(Vector2 dir)
     {
-        Debug.Log("[Arrow] Instantiate Arrow at " + Time.time);
-
         GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
