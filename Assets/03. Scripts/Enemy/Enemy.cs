@@ -5,6 +5,7 @@ public class Enemy : Character
     protected Transform player;
     protected Animator animator;
     protected Rigidbody2D rb;
+    public event System.Action OnEnemyDied;
 
     [SerializeField] protected float attackCooldown = 1f;
     protected float lastAttackTime = 0f;
@@ -72,6 +73,12 @@ public class Enemy : Character
 
     protected override void Die()
     {
+        OnEnemyDied?.Invoke();
+        EnemySpawnManager spawnManager = FindObjectOfType<EnemySpawnManager>();
+        if (spawnManager != null)
+            spawnManager.OnEnemyKilled();
+
+        Destroy(gameObject);
         if (animator != null && animator.HasParameter("Die"))
         {
             animator.SetTrigger("Die");

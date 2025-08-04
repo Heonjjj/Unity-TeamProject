@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class EnemyType
@@ -24,7 +26,10 @@ public class EnemySpawnManager : MonoBehaviour
     public int enemiesPerStage = 20;
     public float spawnDelay = 0.2f;
 
+    public TextMeshProUGUI enemyCountText;
+
     private int currentStage;
+    private int remainingEnemies;
 
     public void StartSpawning(int stage)
     {
@@ -50,7 +55,22 @@ public class EnemySpawnManager : MonoBehaviour
 
         yield return StartCoroutine(SpawnEnemies(stage));
     }
+    private void UpdateEnemyCountUI()
+    {
+        if (enemyCountText != null)
+            enemyCountText.text = $"Enemies Left: {remainingEnemies}";
+    }
 
+    public void OnEnemyKilled()
+    {
+        remainingEnemies--;
+        UpdateEnemyCountUI();
+
+        if (remainingEnemies <= 0)
+        {
+            GameManager.Instance.OnStageCleared();
+        }
+    }
     public void GenerateSpawnPoints(BoardManager boardManager)
     {
         spawnPoints.Clear();
@@ -60,8 +80,8 @@ public class EnemySpawnManager : MonoBehaviour
         int columns = boardManager.columns;
         int rows = boardManager.rows;
 
-        float spawnDistanceX = (columns / 2.5f) + 1f;
-        float spawnDistanceY = (rows / 2.5f) + 1f;
+        float spawnDistanceX = (columns / 3f) + 1f;
+        float spawnDistanceY = (rows / 3f) + 1f;
 
         Vector3[] directions = new Vector3[]
         {
@@ -87,6 +107,8 @@ public class EnemySpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies(int stage)
     {
         int spawnCount = enemiesPerStage + (stage - 1) * 10;
+        remainingEnemies = spawnCount;
+        UpdateEnemyCountUI();
 
         for (int i = 0; i < spawnCount; i++)
         {
@@ -105,8 +127,20 @@ public class EnemySpawnManager : MonoBehaviour
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript.moveSpeed = type.moveSpeed;
         enemyScript.currentHP = type.health;
+
+        enemyScript.OnEnemyDied += HandleEnemyDeath;
     }
 
+    private void HandleEnemyDeath()
+    {
+        remainingEnemies--;
+        UpdateEnemyCountUI();
+
+        if (remainingEnemies <= 0)
+        {
+            GameManager.Instance.OnStageCleared(); // 스테이지 클리어
+        }
+    }
     private EnemyType SelectEnemyType(int stage)
     {
         if (stage <= 2)
