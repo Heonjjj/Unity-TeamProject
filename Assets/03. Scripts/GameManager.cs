@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
             //플레이어 생성 위치 지정
             if (Player.Instance != null)
                 Player.Instance.transform.position = new Vector3(7.5f, 7.5f, 0f);
+
+            EnemySpawnManager spawnManager = FindObjectOfType<EnemySpawnManager>();
+            if (spawnManager != null)
+                spawnManager.StartSpawning(stageLevel);
+
         }
         else if (scene.buildIndex == (int)Escene.BossStage)
         {
