@@ -2,34 +2,28 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    public float attackCooldown = 1.5f;
-    private float lastAttackTime = 0f;
-    public int projectileCount = 1;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float projectileCooldown = 2f;
+    private float lastProjectileTime = 0f;
 
     protected override void Update()
     {
         base.Update();
 
-        if (player != null && Time.time - lastAttackTime >= attackCooldown)
+        if (player != null && Time.time - lastProjectileTime >= projectileCooldown)
         {
             ShootProjectile();
-            lastAttackTime = Time.time;
+            lastProjectileTime = Time.time;
         }
     }
 
-    protected virtual void ShootProjectile()
+    protected override void ShootProjectile()
     {
-        float angleStep = 15f;
-        float startAngle = -((projectileCount - 1) / 2f) * angleStep;
+        if (projectilePrefab == null || firePoint == null) return;
 
-        for (int i = 0; i < projectileCount; i++)
-        {
-            float angle = startAngle + (angleStep * i);
-            Vector2 dir = Quaternion.Euler(0, 0, angle) * (player.position - firePoint.position).normalized;
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            projectile.GetComponent<Rigidbody2D>().velocity = dir * 5f;
-        }
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Vector2 direction = (player.position - transform.position).normalized;
+        projectile.GetComponent<Rigidbody2D>().velocity = direction * 5f;
     }
 }
