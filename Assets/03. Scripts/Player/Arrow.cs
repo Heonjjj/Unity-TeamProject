@@ -18,6 +18,20 @@ public class Arrow : MonoBehaviour
     {
         if (hasHit) return;
 
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            hasHit = true;
+            Destroy(gameObject);
+            return;
+        }
+
+        if (other.GetComponent<TilemapCollider2D>() != null)
+        {
+            hasHit = true;
+            Destroy(gameObject);
+            return;
+        }
+
         BossCharacter boss = other.GetComponentInParent<BossCharacter>();
 
         if (boss != null && boss != owner)
@@ -32,20 +46,6 @@ public class Arrow : MonoBehaviour
         if (enemy != null && enemy != owner && !(enemy is BossCharacter))
         {
             enemy.TakeDamage(owner.attackPower);
-            hasHit = true;
-            Destroy(gameObject);
-            return;
-        }
-
-        if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
-        {
-            hasHit = true;
-            Destroy(gameObject);
-            return;
-        }
-
-        if (other.GetComponent<TilemapCollider2D>() != null)
-        {
             hasHit = true;
             Destroy(gameObject);
             return;
