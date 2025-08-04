@@ -42,7 +42,7 @@ public class Player : Character
         if (maxHP == 0) maxHP = 5f;
         if (attackPower == 0) attackPower = 1f;
         if (attackSpeed == 0) attackSpeed = 1f;
-        if (moveSpeed == 0) moveSpeed = 6f;
+        if (moveSpeed == 0) moveSpeed = 3f;
         if (attackRange == 0) attackRange = 14f;                           //스탯 설정 수정 가능
 
         move = GetComponent<PlayerMove>();
