@@ -76,6 +76,11 @@ public class Player : Character
         animator.SetBool("isWalking", movement != Vector2.zero);
     }
 
+    protected override void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
     //공격 방향으로 정지상태 보여주기
     public void PlayAttackDirection(Vector2 attackDir)
     {
