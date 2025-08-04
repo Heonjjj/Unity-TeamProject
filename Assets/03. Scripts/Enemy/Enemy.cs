@@ -8,6 +8,7 @@ public class Enemy : Character
 
     [SerializeField] protected float attackCooldown = 1f;
     protected float lastAttackTime = 0f;
+    public event System.Action OnEnemyDied;
 
     protected override void Start()
     {
@@ -72,6 +73,8 @@ public class Enemy : Character
 
     protected override void Die()
     {
+        OnEnemyDied?.Invoke();
+
         if (animator != null && animator.HasParameter("Die"))
         {
             animator.SetTrigger("Die");
