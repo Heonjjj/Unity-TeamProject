@@ -23,8 +23,8 @@ public class UpgradeManager : MonoBehaviour
         skillList.Add(new Skill("데미지증가", "데미지가 2 증가합니다", 2, value: 2));
         skillList.Add(new Skill("사거리증가", "사거리가 1 증가합니다", 3, value: 1));
         skillList.Add(new Skill("이동속도증가", "이동속도가 1 증가합니다", 4, value: 1));
-        skillList.Add(new Skill("더블샷","화살을 두 발씩 발사합니다", 5, value:0));
-        skillList.Add(new Skill("트리플샷", "화살을 세 발씩 발사합니다", 6, value:0));
+        skillList.Add(new Skill("트리플샷", "화살을 세 발씩 발사합니다", 5, value: 0));
+        skillList.Add(new Skill("더블샷", "화살을 두 발씩 발사합니다", 6, value: 0));
     }
     public void Start()
     {
@@ -56,11 +56,11 @@ public class UpgradeManager : MonoBehaviour
                 break;
 
             case 5:
-                player.GetComponent<PlayerAttack>().multiShot2 = true;
+                player.GetComponent<PlayerAttack>().multiShot3 = true;                
                 break;
 
             case 6:
-                player.GetComponent<PlayerAttack>().multiShot3 = true;
+                player.GetComponent<PlayerAttack>().multiShot2 = true;
                 break;
         }
     }
