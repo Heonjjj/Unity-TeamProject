@@ -60,8 +60,8 @@ public class EnemySpawnManager : MonoBehaviour
         int columns = boardManager.columns;
         int rows = boardManager.rows;
 
-        float spawnDistanceX = (columns / 2f) + 1f;
-        float spawnDistanceY = (rows / 2f) + 1f;
+        float spawnDistanceX = (columns / 2.5f) + 1f;
+        float spawnDistanceY = (rows / 2.5f) + 1f;
 
         Vector3[] directions = new Vector3[]
         {

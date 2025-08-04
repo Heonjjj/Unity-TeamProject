@@ -93,6 +93,8 @@ public class GameManager : MonoBehaviour //게임초기화, 레벨관리
     {
         // GameOver 처리
         SceneLoader.LoadScene(Escene.GameOver);
+        Destroy(gameObject);
+        Destroy(Player.Instance.gameObject);
     }
 
     public void IncrementStageLevel()

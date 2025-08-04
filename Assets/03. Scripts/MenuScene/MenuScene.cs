@@ -36,6 +36,7 @@ public class MenuScene : MonoBehaviour
     public void OnClickStart()
     {
         SceneLoader.LoadScene(Escene.NormalStage);
+        
     }
 
     public void OnClickQuit()
