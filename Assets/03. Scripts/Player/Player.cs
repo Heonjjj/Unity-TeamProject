@@ -39,7 +39,8 @@ public class Player : Character
 
     protected override void Start()
     {
-        if (maxHP == 0) maxHP = 5f;
+        if (maxHP == 0) maxHP = 8f;
+        if (currentHP == 0) currentHP = 5f;
         if (attackPower == 0) attackPower = 1f;
         if (attackSpeed == 0) attackSpeed = 1f;
         if (moveSpeed == 0) moveSpeed = 3f;
@@ -48,6 +49,9 @@ public class Player : Character
         move = GetComponent<PlayerMove>();
 
         base.Start();                               //최대 체력으로 맞춰주기         
+
+        currentHP = 5f;
+        
         UpdateHPText();                             //HP UI Test
     }
 

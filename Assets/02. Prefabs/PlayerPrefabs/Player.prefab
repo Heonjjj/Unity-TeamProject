@@ -122,12 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdaf08587fa82245a7af94fbe36f01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 8
   currentHP: 5
   attackPower: 1
   attackSpeed: 1
-  moveSpeed: 1
-  attackRange: 10
+  moveSpeed: 3
+  attackRange: 14
   hpText: {fileID: 0}
   damageCooldown: 1
   idleSprite: {fileID: 0}
