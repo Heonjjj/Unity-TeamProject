@@ -8,7 +8,7 @@ public class EnemyType
     public GameObject prefab;
     public float moveSpeed;
     public int health;
-    public int projectileCount; // 원거리만 사용
+    public int projectileCount;
 }
 
 public class EnemySpawnManager : MonoBehaviour
@@ -24,6 +24,7 @@ public class EnemySpawnManager : MonoBehaviour
     public int enemiesPerStage = 20;
     public float spawnDelay = 0.2f;
 
+    private int remainingEnemies;
     private int currentStage;
 
     public void StartSpawning(int stage)
@@ -34,7 +35,6 @@ public class EnemySpawnManager : MonoBehaviour
 
     private IEnumerator InitializeAndSpawn(int stage)
     {
-        // 보드 매니저 자동 탐색
         BoardManager boardManager = null;
         while (boardManager == null)
         {
@@ -42,7 +42,6 @@ public class EnemySpawnManager : MonoBehaviour
             yield return null;
         }
 
-        // 스폰 포인트 생성
         if (spawnPoints.Count == 0)
         {
             GenerateSpawnPoints(boardManager);
@@ -55,24 +54,23 @@ public class EnemySpawnManager : MonoBehaviour
     {
         spawnPoints.Clear();
 
-        // 맵 크기 기반으로 스폰 포인트 계산
         Vector3 boardCenter = Vector3.zero;
         int columns = boardManager.columns;
         int rows = boardManager.rows;
 
-        float spawnDistanceX = (columns / 2.5f) + 1f;
-        float spawnDistanceY = (rows / 2.5f) + 1f;
+        float spawnDistanceX = (columns / 3f);
+        float spawnDistanceY = (rows / 3f);
 
         Vector3[] directions = new Vector3[]
         {
-            new Vector3(0, spawnDistanceY),    // 위
-            new Vector3(0, -spawnDistanceY),   // 아래
-            new Vector3(spawnDistanceX, 0),    // 오른쪽
-            new Vector3(-spawnDistanceX, 0),   // 왼쪽
-            new Vector3(spawnDistanceX, spawnDistanceY),     // 우상단
-            new Vector3(-spawnDistanceX, spawnDistanceY),    // 좌상단
-            new Vector3(spawnDistanceX, -spawnDistanceY),    // 우하단
-            new Vector3(-spawnDistanceX, -spawnDistanceY)    // 좌하단
+            new Vector3(0, spawnDistanceY),
+            new Vector3(0, -spawnDistanceY),
+            new Vector3(spawnDistanceX, 0),
+            new Vector3(-spawnDistanceX, 0),
+            new Vector3(spawnDistanceX, spawnDistanceY),
+            new Vector3(-spawnDistanceX, spawnDistanceY),
+            new Vector3(spawnDistanceX, -spawnDistanceY),
+            new Vector3(-spawnDistanceX, -spawnDistanceY)
         };
 
         for (int i = 0; i < directions.Length; i++)
@@ -87,6 +85,7 @@ public class EnemySpawnManager : MonoBehaviour
     private IEnumerator SpawnEnemies(int stage)
     {
         int spawnCount = enemiesPerStage + (stage - 1) * 10;
+        remainingEnemies = spawnCount;
 
         for (int i = 0; i < spawnCount; i++)
         {
@@ -105,6 +104,18 @@ public class EnemySpawnManager : MonoBehaviour
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         enemyScript.moveSpeed = type.moveSpeed;
         enemyScript.currentHP = type.health;
+
+        enemyScript.OnEnemyDied += HandleEnemyDeath;
+    }
+
+    private void HandleEnemyDeath()
+    {
+        remainingEnemies--;
+
+        if (remainingEnemies <= 0)
+        {
+            GameManager.Instance.OnStageCleared();
+        }
     }
 
     private EnemyType SelectEnemyType(int stage)
