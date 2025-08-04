@@ -24,6 +24,14 @@ public class Arrow : MonoBehaviour
             return;
         }
 
+        Character enemy = other.GetComponentInParent<Character>();
+        if (enemy != null && enemy != owner && !(enemy is BossCharacter))
+        {
+            enemy.TakeDamage(owner.attackPower);
+            Destroy(gameObject);
+            return;
+        }
+
         if (other.CompareTag("Wall") || other.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
