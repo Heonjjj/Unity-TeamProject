@@ -104,7 +104,6 @@ public class BossTrigger : MonoBehaviour
     private void OnBossDead()
     {
         bossHPBar.gameObject.SetActive(false);
-        // 씬 전환, 클리어 등 추가
     }
 
     private void OnDestroy()
@@ -132,33 +131,5 @@ public class BossTrigger : MonoBehaviour
         );
 
         Gizmos.DrawWireCube(center, size);
-    }
-
-    private void Update()
-    {
-#if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.B) && bossCharacter == null)
-        {
-            Debug.Log("테스트: 강제 보스 소환 시도");
-            BossStageData selectedBoss = bossStages.Find(b => b.stage == GetCurrentStage());
-
-            if (selectedBoss != null && selectedBoss.bossPrefab != null)
-            {
-                SpawnBoss(selectedBoss.bossPrefab);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.N) && bossCharacter != null)
-        {
-            bossCharacter.SetHP(1);
-            Debug.Log("보스 체력 1로 설정됨");
-        }
-
-        if (Input.GetKeyDown(KeyCode.M) && bossCharacter != null)
-        {
-            bossCharacter.TakeDamage(99999); // 강제 즉사
-            Debug.Log("보스 즉사 처리됨");
-        }
-#endif
     }
 }
