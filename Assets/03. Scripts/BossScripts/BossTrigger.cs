@@ -94,7 +94,7 @@ public class BossTrigger : MonoBehaviour
 
     private void OnBossDead()
     {
-
+        GameManager.Instance.OnStageCleared();
     }
 
     private void OnDestroy()

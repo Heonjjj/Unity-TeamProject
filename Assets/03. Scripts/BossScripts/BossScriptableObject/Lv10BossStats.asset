@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lv10BossStats
   m_EditorClassIdentifier: 
   BossName: Boss Trunk
-  MaxHP: 1000
-  MoveSpeed: 2
+  MaxHP: 700
+  MoveSpeed: 1
   AttackRange: 15
